@@ -1,0 +1,37 @@
+.vistaMain{
+
+    width: 100vw;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+
+}
+.slogan{
+    width: 100vw;
+    height: 80px;
+}
+
+.vistaClinica{
+
+    border: black 1px solid;
+    width: 50vw;
+    height: 350px;
+    background-image: url('../../img/clinica\ dental\ foto2.jpg');
+    background-size: contain;
+   
+    
+}
+.vistaFooter{
+
+    width: 100vw;
+    height: 100px;
+    background-color: rgb(70, 67, 67);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+p{
+    font-size: 10px;
+}
