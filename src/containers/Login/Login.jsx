@@ -1,22 +1,39 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton/CTAButton';
+import Header from '../../components/Header/Header';
 
-import './Login.css';
+import './Login.scss';
 
 
 
 const Login = (props) => {
 
-   
-
     return (
-        <div className="contenedorLogin">
-            Soy el componente Login. Y aquí van dos ejemplos de uso del componente botón:
-            <br/>
-            <CTAButton goto="login" text="Entrar o registrarte" styling="CTA"/>
-            <br/>
-            <CTAButton goto="register" text="Regístrate" styling="alt"/>
-        </div>
+        <>
+        <Header></Header>
+        <section className="loginContainer">
+            <div className="login">
+                <h2>¡Hola otra vez!</h2>
+                <p>Introduce tu email y tu contraseña para acceder al área de cliente y pedir cita.</p>
+                <div>
+                    <CTAButton goto="login" text="Acceder" styling="CTA"/>
+                </div>
+            </div>
+            <div className="separator">
+                
+            </div>
+            <div className="register">
+                <h3>¿Aún no nos conoces?</h3>
+                <p>En React Dent contamos con los mejores odontólogos generales y especialistas en Valencia, comprometidos a dar el mejor cuidado a tu salud dental.</p>
+                <div>
+                    <CTAButton goto="register" text="Regístrate" styling="alt"/>
+                </div>
+            </div>
+        </section>
+        <footer>
+            
+        </footer>
+        </>
     )
 }
 

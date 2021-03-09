@@ -1,19 +1,16 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton/CTAButton';
+import Header from '../../components/Header/Header';
 
-import '../Home/Home.css';
+import '../Home/Home.scss';
 
 
 const Home =()=>{
 
     return(
         <div className='vistaHome'>
-            <header className="vistaHeader" >
-            <div className="logo"></div>
-            <div className="vistaBoton">
-            <CTAButton goto="login" text="Entrar o registrarte" styling="CTA"/>
-             </div>
-            </header>
+            
+            <Header home="true"></Header>
                 
             <main className='vistaMain'>
                 <div className="slogan">
