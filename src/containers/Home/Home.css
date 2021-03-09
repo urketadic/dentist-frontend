@@ -1,23 +1,44 @@
-.vistaMain{
-
+.vistaHeader{
+    position: relative;
     width: 100vw;
-    height: 430px;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+   }
+.logo{
+   width: 223px;
+   height: 50px;
+   display: flex;
+   margin-left: 50px;
+   background-image: url('../../logo.png');
+   background-size: cover;
+  
+   }
+.vistaBoton{
+      margin-right: 50px;
+     
+   }
+.vistaMain{
+    width: 100vw;
+    height: 730px;
     display: flex;
     flex-direction: column;
-
 }
 .slogan{
     width: 100vw;
-    height: 80px;
+    height: 90px;
+    font-size: 20px;
 }
-
 .vistaClinica{
 
-    border: black 1px solid;
-    width: 50vw;
-    height: 350px;
+    width: 100vw;
+   
+    height: 370px;
     background-image: url('../../img/clinica\ dental\ foto2.jpg');
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
    
     
 }

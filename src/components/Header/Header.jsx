@@ -8,10 +8,8 @@ const Header = ()=>{
       
 return(
         <div className='vistaHeader'>
-         <div className="logo">
-          
-         </div>
-
+         <div className="logo"></div>
+     
         </div>
     )
 }

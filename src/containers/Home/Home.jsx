@@ -1,21 +1,24 @@
 import React from 'react';
-import Header from '../../components/Header/Header';
+import CTAButton from '../../components/CTAButton/CTAButton';
+
 import '../Home/Home.css';
 
 
-const Home =(props)=>{
-
-
-
-
+const Home =()=>{
 
     return(
         <div className='vistaHome'>
-            <Header/>
-
+            <header className="vistaHeader" >
+            <div className="logo"></div>
+            <div className="vistaBoton">
+            <CTAButton goto="login" text="Entrar o registrarte" styling="CTA"/>
+             </div>
+            </header>
+                
             <main className='vistaMain'>
                 <div className="slogan">
-                   <strong>Molestias dentales? , Reactiona!!!! Ven a ReactDent
+                   <strong>¿Molestias dentales?<br/>
+                    ReacTiona!!!! Ven a ReactDent <br/>
                     Registrate y pide tu primera  Cita Gratis ahora.
                    </strong>
                 </div>
