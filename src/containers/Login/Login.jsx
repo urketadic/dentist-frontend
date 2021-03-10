@@ -1,5 +1,6 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton/CTAButton';
+import FormInput from '../../components/FormInput/FormInput';
 import Header from '../../components/Header/Header';
 
 import './Login.scss';
@@ -15,6 +16,12 @@ const Login = (props) => {
             <div className="login">
                 <h2>¡Hola otra vez!</h2>
                 <p>Introduce tu email y tu contraseña para acceder al área de cliente y pedir cita.</p>
+                <div className="inputContainer">
+                    <FormInput label="Correo Electrónico" name="email"></FormInput>
+                </div>
+                <div className="inputContainer">
+                    <FormInput type="Password" label="Contraseña" name="password"></FormInput>
+                </div>
                 <div>
                     <CTAButton goto="login" text="Acceder" styling="CTA"/>
                 </div>
