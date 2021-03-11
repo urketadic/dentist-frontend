@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 
 import { Input } from 'antd';
-import 'antd/lib/input/style/index.css';
+import './Input.css';
 import './FormInput.css';
 
 const FormInput = (props) => {
@@ -12,22 +12,27 @@ const FormInput = (props) => {
     if (props.type) {
         CInput = Input[props.type];
     }
+
+    let onChange = ()=>{};
+    if(props.onChange) onChange = props.onChange;
     
     const [isActive, setIsActive] = useState(false);
 
-    const handleTextChange = (text) => {
+    const handleTextChange = (key,value) => {
       
-        if (text !== '') {
+        if (value !== '') {
           setIsActive(true);
         } else {
           setIsActive(false);
         }
 
+        onChange(key,value);
+
     }
     
     return(
         <div className="formInput">
-            <CInput name={props.name} onChange={(e) => handleTextChange(e.target.value)}/>
+            <CInput name={props.name} onChange={(e) => handleTextChange(e.target.name,e.target.value)} maxLength={props.maxLength}/>
             <label htmlFor={props.name} className={ isActive ? "Active" : ""}>
                 {props.label}
             </label>

@@ -19,7 +19,7 @@
 
 .formInput:focus-within label, .formInput label.Active {
     top: 0;
-    padding-top: 0.6em;
+    padding: 0.6em 1.1rem;
     transform: scale(0.8);
 }
 
@@ -28,7 +28,7 @@
 }
 
 .ant-input, .ant-input-affix-wrapper {
-    padding: 1.6em 1em 0.8em 1em;
+    padding: 1.7em 1em 0.7em 1em;
     font-size: 14px;
     cursor: text;
 }

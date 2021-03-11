@@ -1,7 +1,5 @@
-.CTA {
-    background-color: #FF518F;
+.CTAButton {
     display:inline-block;
-    color: #FFF;
     border-radius: 50em;
     padding: 0.4em 1.5em 0.6em 1.5em;
     font-weight: 500;
@@ -10,19 +8,37 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    transition: background-color .3s ease;
+}
+
+.CTA {
+    background-color: #FF518F;
+    color: #FFF;
+}
+
+.CTA:hover {
+    background-color: #e71c63;
 }
 
 .alt {
     background-color: #FFF;
-    display:inline-block;
     color: #666;
-    border-radius: 50em;
     border: 1px solid #B8B8B8;
-    padding: 0.4em 1.5em 0.6em 1.5em;
-    font-weight: 500;
-    cursor: pointer;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.alt:hover {
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    border: 1px solid #B8B8B8;
+}
+
+button {
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+button:focus {
+    outline: none;
 }

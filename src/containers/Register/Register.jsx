@@ -1,6 +1,6 @@
 import React , {useEffect,useState}  from 'react';
 //import { useHistory } from 'react-router-dom';
-import './Register.css';
+import './Register.scss';
 import Header from '../../components/Header/Header';
 import checkError from '../../Myfunctions';
 import axios from 'axios';
@@ -89,7 +89,7 @@ const Register=(props)=>{
     return(
         <>
         <Header></Header>
-        <div className="container">
+        <div className="registerContainer">
             
             <strong className='paragraph'>Regístrate gratis en React Dent</strong>
             <strong className='paragraph'>Crea tu cuenta ahora y pide cita para disfrutar de la mejor atención odontológica en Valencia.</strong>
