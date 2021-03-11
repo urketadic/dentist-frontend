@@ -33,7 +33,7 @@ const Register=(props)=>{
     },[]);
 
     useEffect(()=> {
-        
+        console.log('el handler funciona');
    
     });
 
@@ -50,9 +50,9 @@ const Register=(props)=>{
 
      // Manejar el estado
 
-     const handler = (event)=>{
-        setUser({...user, [event.target.name]: event.target.type === "number" ? +event.target.value : event.target.value});
-        console.log(event);
+     const handler = (name,value)=>{
+        setUser({...user, [name]:value});
+        
       }
 
       // Envio de datos del registro
@@ -84,7 +84,7 @@ const Register=(props)=>{
         let endpointRegister = 'http://localhost:3001/users'
         
            let data = await axios.post(endpointRegister, bodyData);
-        
+        console.log(data);
       }
     return(
         <>
