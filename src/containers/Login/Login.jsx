@@ -30,7 +30,7 @@ const Login = (props) => {
 
     const handleResponse = (response) => {
         if (response.status == 200) {
-            localStorage.set('credentials',JSON.stringify(response.data));
+            localStorage.setItem('credentials',JSON.stringify(response.data));
             history.push('/profile');
         } else {
             setLoading(false);
