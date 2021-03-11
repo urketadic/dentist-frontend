@@ -39,7 +39,8 @@ const Login = (props) => {
     }
 
     const newMessage = (msg) => {
-        setMessage([...message,<Message text={msg}></Message>]);
+        const key = (~(Math.random()*99999));
+        setMessage([...message,<Message key={key} text={msg}></Message>]);
     }
 
     const submit = async () => {
