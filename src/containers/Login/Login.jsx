@@ -1,11 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import CTAButton from '../../components/CTAButton/CTAButton';
 import FormInput from '../../components/FormInput/FormInput';
 import Header from '../../components/Header/Header';
+import Loading from '../../components/Loading/Loading';
 import validate from '../../tools/validate';
 import { Form } from 'antd';
 import axios from 'axios';
+import Message from '../../components/Message/Message';
 
 import './Login.scss';
 
@@ -13,12 +16,30 @@ import './Login.scss';
 
 const Login = (props) => {
 
+    const history = useHistory();
+
     const [credentials, setCredentials] = useState({email:'',password:''});
     const [errors, setErrors] = useState({});
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState([]);
 
     const updateCredentials = (key,value) => {
         setCredentials({...credentials, [key]: value});
         if (Object.keys(errors).length > 0) setErrors(validate({...credentials, [key]: value}));
+    }
+
+    const handleResponse = (response) => {
+        if (response.status == 200) {
+            localStorage.set('credentials',JSON.stringify(response.data));
+            history.push('/profile');
+        } else {
+            setLoading(false);
+            newMessage(response.data.message);
+        }
+    }
+
+    const newMessage = (msg) => {
+        setMessage([...message,<Message text={msg}></Message>]);
     }
 
     const submit = async () => {
@@ -27,16 +48,21 @@ const Login = (props) => {
         setErrors(errs);
 
         if (Object.keys(errs).length === 0) {
-            console.log('sending',credentials);
-            let response = await axios.post('http://localhost:3001/login',credentials);
-            console.log(response);
+            setLoading(true);
+            setTimeout(()=>{
+                axios.post('http://localhost:3001/login',credentials)
+                .then(handleResponse)
+                .catch((err)=>{handleResponse({data:{message:'Error de conexión.'}})});
+            },500);
         }
     }
 
     return (
         <>
         <Header></Header>
+        <Loading visible={loading}></Loading>
         <section className="loginContainer">
+            {message}
             <div className="login">
                 <h2>¡Hola otra vez!</h2>
                 <p>Introduce tu email y tu contraseña para acceder al área de cliente y pedir cita.</p>

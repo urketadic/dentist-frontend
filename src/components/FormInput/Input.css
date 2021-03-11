@@ -987,10 +987,6 @@
     text-align: right;
   }
 }
-.ant-form-item {
-  /* Some non-status related component style is in `components.less` */
-  /* To support leave along ErrorList. We add additional className to handle explain style */
-}
 .ant-form-item-explain.ant-form-item-explain-error {
   color: #ff4d4f;
 }
