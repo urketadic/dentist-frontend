@@ -3,7 +3,7 @@
 
     .vistaMain{
         width: 100%;
-        height: 730px;
+        height: 100%;
         display: flex;
         flex-direction: column;
     }
@@ -38,4 +38,36 @@
         font-size: 10px;
     }
     
+}
+.coleccionespecialidades{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 700px;
+
+    justify-content: center;
+    justify-content: space-evenly;
+}
+.especialidad{
+    width: 200px;
+    height: 200px;
+   // border: 2px solid rgb(7, 6, 7);
+    margin-left: 70px;
+    
+}
+.h3{
+    color: rgb(177, 10, 177);
+
+}
+img{
+    display: flex;
+    width: 200px;
+    height: 200px;
+}
+.vistaDivEspecialidades{
+    width:350px ;
+    height: 350px;
+  /*  border: 2px solid rgb(173, 18, 173);*/
+    margin: 15px;
 }

@@ -1,5 +1,5 @@
 import React , {useEffect,useState}  from 'react';
-//import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './Register.scss';
 import Header from '../../components/Header/Header';
 import checkError from '../../Myfunctions';
@@ -10,7 +10,7 @@ import FormInput from '../../components/FormInput/FormInput';
 
 
 const Register=(props)=>{
-
+    let history = useHistory();
     //Hooks
 
     const [user, setUser] = useState({
@@ -58,6 +58,8 @@ const Register=(props)=>{
       // Envio de datos del registro
 
       const sendData = async ()=>{
+          
+
 
         setMensaje('');
         // Errors check
@@ -82,9 +84,18 @@ const Register=(props)=>{
         console.log('Datos del Registro',bodyData);
 
         let endpointRegister = 'http://localhost:3001/users'
-        
+          
            let data = await axios.post(endpointRegister, bodyData);
-        console.log(data);
+        console.log(data.status);
+        if(data.status == 200){
+             
+            alert(`Enhorabuena ${user.name}Se ha registado con exito`);
+            setTimeout(()=>{
+             history.push('/login')  
+            },2000)
+   
+        }else
+        alert('Error de Registro')
       }
     return(
         <>
