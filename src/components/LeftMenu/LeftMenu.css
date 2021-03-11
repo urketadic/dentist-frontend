@@ -1,0 +1,33 @@
+.LMContainer {
+    height:100%;
+    flex: 0 1 auto;
+    outline: #E5E5E5 solid 1px;
+    background-color: white;
+    padding: 2.5em 3em;
+    box-sizing: border-box;
+    z-index:99;
+}
+
+.LMItem {
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+    height:1.3em;
+    cursor:pointer;
+    margin-bottom: .9em;
+}
+
+.LMItemTitle {
+    display:inline-block;
+    margin:0 0.8em 0 1em;
+}
+
+.LMItem .select {
+    display:inline-block;
+    width:2px;
+    height:90%;
+}
+
+.LMItem.selected .select, .LMItem:hover .select {
+    background-color: #FF518F;
+}
