@@ -1,11 +1,11 @@
 import React , {useEffect,useState}  from 'react';
 import { useHistory } from 'react-router-dom';
-import './Register.scss';
 import Header from '../../components/Header/Header';
 import checkError from '../../Myfunctions';
 import axios from 'axios';
 import CTAButton from '../../components/CTAButton/CTAButton';
 import FormInput from '../../components/FormInput/FormInput';
+import './Register.scss';
 
 
 

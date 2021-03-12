@@ -1,0 +1,17 @@
+@import 'scss/variables';
+@import 'components/Avatar/Avatar';
+@import 'components/CTAButton/CTAButton';
+@import 'components/Header/Header';
+@import 'components/LeftMenu/LeftMenu';
+@import 'components/Message/Message';
+
+.App {
+    text-align: center;
+}
+  
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+}

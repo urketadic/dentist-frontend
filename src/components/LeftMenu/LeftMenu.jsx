@@ -1,8 +1,6 @@
 
 import React from 'react';
 
-import './LeftMenu.css';
-
 import {useHistory} from 'react-router-dom';
 
 const LeftMenu = (props) => {

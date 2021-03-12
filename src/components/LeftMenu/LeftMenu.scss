@@ -1,7 +1,7 @@
 .LMContainer {
     height:100%;
     flex: 0 1 auto;
-    outline: #E5E5E5 solid 1px;
+    outline: $border-color solid 1px;
     background-color: white;
     padding: 2.5em 3em;
     box-sizing: border-box;
@@ -29,5 +29,5 @@
 }
 
 .LMItem.selected .select, .LMItem:hover .select {
-    background-color: #FF518F;
+    background-color: $pink;
 }

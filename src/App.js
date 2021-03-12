@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Switch ,Route} from 'react-router-dom';
- import './App.css';
+import './App.scss';
 import Login from './containers/Login/Login';
 import Home from './containers/Home/Home';
 import Register from './containers/Register/Register';

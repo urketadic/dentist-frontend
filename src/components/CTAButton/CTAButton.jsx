@@ -1,8 +1,6 @@
 
 import React from 'react';
 
-import './CTAButton.css';
-
 import {useHistory} from 'react-router-dom';
 
 const CTAButton = (props) => {

@@ -2,12 +2,12 @@ import React from 'react';
 import CTAButton from '../../components/CTAButton/CTAButton';
 import Header from '../../components/Header/Header';
 import implante from '../../img/implante.jpg';
-import '../Home/Home.scss';
 import ortodoncia from '../../img/ortodoncia.jpg';
 import protesis from '../../img/protesis.jpg';
 import endodoncia from '../../img/endodoncia.jpg';
 import Odontopediatria from '../../img/Odontopediatria.jpg';
 import cirugia from '../../img/cirugia.jpg';
+import '../Home/Home.scss';
 
 const Home =()=>{
 

@@ -3,7 +3,6 @@ import CTAButton from '../../components/CTAButton/CTAButton';
 import Header from '../../components/Header/Header';
 import LeftMenu from '../../components/LeftMenu/LeftMenu';
 import {useHistory} from 'react-router-dom';
-
 import './Profile.scss';
 
 

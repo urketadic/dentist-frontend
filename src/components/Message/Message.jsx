@@ -1,6 +1,5 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import './Message.css';
 
 
 const Message = (props)=>{

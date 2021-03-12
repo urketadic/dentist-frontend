@@ -9,7 +9,6 @@ import validate from '../../tools/validate';
 import { Form } from 'antd';
 import axios from 'axios';
 import Message from '../../components/Message/Message';
-
 import './Login.scss';
 
 
@@ -17,6 +16,9 @@ import './Login.scss';
 const Login = (props) => {
 
     const history = useHistory();
+    
+    let logged = localStorage.getItem('credentials');
+    if (logged) history.push('/profile');
 
     const [credentials, setCredentials] = useState({email:'',password:''});
     const [errors, setErrors] = useState({});

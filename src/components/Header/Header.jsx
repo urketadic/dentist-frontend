@@ -1,5 +1,4 @@
 import React from 'react';
-import './Header.css';
 import CTAButton from '../CTAButton/CTAButton'
 import Avatar from '../Avatar/Avatar';
 import {useHistory} from 'react-router-dom';
