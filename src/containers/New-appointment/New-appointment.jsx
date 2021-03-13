@@ -84,7 +84,7 @@ const Appointment = (props)=>{
            </div>
            <div className="right">
            <div className="bienvenida">
-             <h3>Hola {credentials.user.name}</h3>
+             <h3 className="h3">Hola {credentials.user.name}</h3>
            </div>
            <main className="cuerpo">
                 <div className="form">
