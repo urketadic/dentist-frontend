@@ -1,5 +1,4 @@
 import React from 'react';
-import CTAButton from '../../components/CTAButton/CTAButton';
 import Header from '../../components/Header/Header';
 import LeftMenu from '../../components/LeftMenu/LeftMenu';
 import {useHistory} from 'react-router-dom';
@@ -21,7 +20,7 @@ const Profile = (props) => {
         <section className="profileContainer">
             <LeftMenu></LeftMenu>
             <div className="profile">
-                <div className="bienvenida">Bienvenido, {credentials.user.name}.</div>
+                <div className="bienvenida">Bienvenido/a, {credentials.user.name}.</div>
             </div>
         </section>
         <footer>

@@ -5,6 +5,7 @@ import Login from './containers/Login/Login';
 import Home from './containers/Home/Home';
 import Register from './containers/Register/Register';
 import Profile from './containers/Profile/Profile';
+import Appointment from './containers/New-appointment/New-appointment';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/login' exact component ={Login}/>
           <Route path='/register' exact component ={Register}/>
           <Route path='/profile' exact component ={Profile}/>
+          <Route path='/profile/new-appointment' exact component={Appointment}/>
          
           
         </Switch>

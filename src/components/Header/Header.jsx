@@ -12,7 +12,7 @@ const Header = (props)=>{
 
     let right;
     let logoClasses = 'logo';
-    if (props.home == 'true') {
+    if (props.home === 'true') {
         right = <CTAButton goto="login" text="Entrar o registrarte" styling="CTA"/>;
         logoClasses = 'logo collapse';
     }
