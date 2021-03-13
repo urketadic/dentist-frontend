@@ -5,8 +5,15 @@ import {useHistory} from 'react-router-dom';
 import FormInput from '../../components/FormInput/FormInput';
 import './New-appointment.scss'
 import LeftMenu from '../../components/LeftMenu/LeftMenu';
+import axios from "axios";
 
 const Appointment = (props)=>{
+
+
+      let history = useHistory();
+      let credentials = JSON.parse(localStorage.getItem('credentials'));
+
+       if(!credentials) history.push('/login');
 
     const [appointment, setAppointment] = useState({
 
@@ -41,17 +48,31 @@ const Appointment = (props)=>{
 
       // Mis Funciones
 
-      const sendData = ()=>{
+      const sendData = async()=>{
+        let userId = 14
 
-        return;
+       let appointmentData={
+          
+            dentistId: appointment.dentistId,
+            date: appointment.date,
+            duration: appointment.duration,
+            comment: appointment.comment,
+            paid: appointment.paid
+             
+           }
+           console.log(appointmentData);
+            
+            let endpointAppointments = `http://localhost:3000/users/${userId}/appointments`
+            let dataResults= await axios.post(endpointAppointments,appointmentData);
+         if(dataResults.status == 200){
+           alert(`${credentials.user.name} : Su Cita Se ha Generado Correctamente`)
+         }else{
+           alert(`Ha ocurrido un error, Vuelva a intentarlo ${credentials.user.name} , si el error persiste Porfavor contantenos por telefono`)
+         }
       }
 
 
-      let history = useHistory();
-      let credentials = JSON.parse(localStorage.getItem('credentials'));
-
-       if(!credentials) history.push('/login');
-
+      
 
 
     return(
@@ -69,7 +90,7 @@ const Appointment = (props)=>{
                 <div className="form">
                   <div className="input">
                    <h5>Nombre del cliente</h5>
-                   <FormInput   label ={credentials.user.name} name="userId" onClick ={handler}/>
+                   <FormInput   label ={credentials.user.name} name="userId" onChange={handler}/>
                   </div>
                   <div className="input">
                   <h5>Dentista :</h5>
@@ -82,21 +103,21 @@ const Appointment = (props)=>{
                   </div>
                   <div className="input">
                    <h5>Fecha de su Cita</h5>
-                   <FormInput label="Proxima cita" name="date" onClick ={handler}/>
+                   <FormInput label="Proxima cita" name="date" onChange={handler}/>
                   </div>
                   <div className="input">
                   <h5>Duracion Aprox de la consulta</h5>
-                   <FormInput name="duration" onClick ={handler}/>
+                   <FormInput name="duration" onChange={handler}/>
                   </div>
                   <div className="input">
                   <h5>Dolencia</h5>
-                   <FormInput name="comment" onClick ={handler}/>
+                   <FormInput name="comment" onChange={handler}/>
                   </div>
                   <div className="input">
                   <h5>Pago de la consulta</h5>
-                  <FormInput name="paid" onClick={handler}/>
+                  <FormInput name="paid"onChange={handler}/>
                   </div>
-                  <button className='subbmit' onClick={()=>sendData()}>Subbmit</button><br/>
+                  <button className='subbmit' onClick={sendData}>Subbmit</button><br/>
                <div/>
           </div>     
         </main>
