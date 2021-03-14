@@ -1,29 +1,3 @@
-.login {
-    text-align: left;
-}
-
-.login, .register {
-    padding: 3em;
-    max-width: 24em;
-}
-
-.inputContainer {
-    margin-bottom: 1em;
-}
-
-.buttonContainer {
-    margin-bottom:2em;
-}
-
-.register p {
-    margin-bottom:2em;
-}
-
-.separator {
-    width: 2px;
-    height: 20em;
-    background-color: #E5E5E5;
-}
 
 .loginContainer {
     position: relative;
@@ -45,36 +19,64 @@
     h3 {
         font-weight:500;
     }
+
+    .login {
+        text-align: left;
+    }
+    
+    .login, .register {
+        padding: 3em;
+        max-width: 24em;
+    }
+    
+    .inputContainer {
+        margin-bottom: 1em;
+    }
+    
+    .buttonContainer {
+        margin-bottom:2em;
+    }
+    
+    .register p {
+        margin-bottom:2em;
+    }
+    
+    .separator {
+        width: 2px;
+        height: 20em;
+        background-color: #E5E5E5;
+    }
+
+    @media (max-width: 991px) {
+        .login, .register {
+            padding: 0 1em;
+            max-width: 24em;
+        }
+        .separator {
+            display:none;
+        }
+        .loginContainer {
+            flex-flow:column;
+        }
+        .register {
+            text-align: left;
+            max-width: 100%;
+            width:26em;
+            box-sizing: border-box;
+        }
+        .register p {
+            display:none;
+        }
+    }
 }
 
 .App {
     height: 100%;
     display: flex;
     flex-flow: column;
+    overflow-y: auto;
 }
 
 header, footer {
     flex: 0 1 auto;
-}
-
-@media (max-width: 991px) {
-    .login, .register {
-        padding: 0 1em;
-        max-width: 24em;
-    }
-    .separator {
-        display:none;
-    }
-    .loginContainer {
-        flex-flow:column;
-    }
-    .register {
-        text-align: left;
-        max-width: 100%;
-        width:26em;
-        box-sizing: border-box;
-    }
-    .register p {
-        display:none;
-    }
 }

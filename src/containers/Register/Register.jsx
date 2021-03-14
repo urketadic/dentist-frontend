@@ -1,144 +1,140 @@
-import React , {useEffect,useState}  from 'react';
-import { useHistory } from 'react-router-dom';
-import Header from '../../components/Header/Header';
-import checkError from '../../Myfunctions';
-import axios from 'axios';
-import CTAButton from '../../components/CTAButton/CTAButton';
-import FormInput from '../../components/FormInput/FormInput';
-import './Register.scss';
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import Header from "../../components/Header/Header";
+import validate from "../../tools/validate";
+import axios from "axios";
+import CTAButton from "../../components/CTAButton/CTAButton";
+import FormInput from "../../components/FormInput/FormInput";
+import { Form } from 'antd';
+import "./Register.scss";
+import Loading from "../../components/Loading/Loading";
+import Message from "../../components/Message/Message";
 
+const Register = (props) => {
+  let history = useHistory();
 
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+    name: "",
+    lastname: "",
+    address: "",
+    nif: "",
+    born: "",
+    phone: "",
+    passwordValidation: ""
+  });
 
-const Register=(props)=>{
-    let history = useHistory();
-    //Hooks
+  const [message, setMessage] = useState([]);
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
-    const [user, setUser] = useState({
+  // Manejar el estado
 
-        email : '',
-        password:'',
-        name : '',
-        lastname : '',
-        address:'',
-        nif:'',
-        born:'',
-        phone:''
-        
-    });
+  const updateUser = (key, value) => {
+    setUser({ ...user, [key]: value });
+    if (Object.keys(errors).length > 0) setErrors(validate({ ...user, [key]: value }, "register"));
+  };
 
-    useEffect(()=> {
-    
-        console.log("Mounted...");
-        
-    },[]);
+  // Envio de datos del registro
 
-    useEffect(()=> {
-        console.log('el handler funciona');
-   
-    });
+  const sendData = async () => {
+    const errs = validate(user, "register");
+    setErrors(errs);
 
-    useEffect(()=>{
+    if (Object.keys(errs).length > 0) return;
 
-        return()=>{
-            console.log("unmounted");
-        }
-    },[]);
+    let userData = {
+      email: user.email,
+      password: user.password,
+      name: user.name,
+      lastname: user.lastname,
+      address: user.address,
+      nif: user.nif,
+      born: user.born,
+      phone: user.phone,
+    };
 
-    const [mensaje, setMensaje] = useState('');
+    setLoading(true);
+    setTimeout(() => {
+      axios
+        .post("http://localhost:3001/users", userData)
+        .then(handleResponse)
+        .catch((err) => {
+          handleResponse({ data: { message: "Error de conexión." } });
+        });
+    }, 500);
+  };
 
-   
+  const handleResponse = (response) => {
+    if (response.status == 200) {
+      localStorage.setItem("pendingmessage", "Registrado exitosamente. Ya puede iniciar sesión.");
+      history.push("/login");
+    } else {
+      setLoading(false);
+      newMessage(response.data.message);
+    }
+  };
 
-     // Manejar el estado
+  const newMessage = (msg) => {
+    const key = ~(Math.random() * 99999);
+    setMessage([...message, <Message key={key} text={msg}></Message>]);
+  };
 
-     const handler = (name,value)=>{
-        setUser({...user, [name]:value});
-        
-      }
+  return (
+    <>
+      <Header></Header>
+      <Loading visible={loading}></Loading>
+      <div className="registerContainer">
+        {message}
+        <div className="registerForm">
+            <h2>Regístrate gratis en React Dent</h2>
+            <p>Crea tu cuenta ahora y pide cita para disfrutar de la mejor atención odontológica en Valencia.</p>
 
-      // Envio de datos del registro
-
-      const sendData = async ()=>{
-          
-
-
-        setMensaje('');
-        // Errors check
-
-        let messajeError = checkError(user);
-        setMensaje(messajeError);
-
-        if(messajeError){
-            return;
-        }
-
-        let bodyData={
-        email : user.email,
-        password:user.password,
-        name : user.name,
-        lastname : user.lastname,
-        address:user.address,
-        nif:user.nif,
-        born:user.born,
-        phone:user.phone
-        }
-        console.log('Datos del Registro',bodyData);
-
-        let endpointRegister = 'http://localhost:3001/users'
-          
-           let data = await axios.post(endpointRegister, bodyData);
-        console.log(data.status);
-        if(data.status == 200){
-             
-            alert(`Enhorabuena ${user.name}Se ha registado con exito`);
-            setTimeout(()=>{
-             history.push('/login')  
-            },2000)
-   
-        }else
-        alert('Error de Registro')
-      }
-    return(
-        <>
-        <Header></Header>
-        <div className="registerContainer">
-            
-            <strong className='paragraph'>Regístrate gratis en React Dent</strong>
-            <strong className='paragraph'>Crea tu cuenta ahora y pide cita para disfrutar de la mejor atención odontológica en Valencia.</strong>
-            
-            <div className="form">
-                <div className="formOne">
-                <FormInput label="Nombre" name="name" onChange={handler}/>
-                <FormInput label="Apellidos" name="lastname" onChange={handler}/>
-                  </div>
-                <div className="formOne">
-                <FormInput label="Dirección" name="address" onChange={handler}/>
-                <FormInput label="Documento de identidad" name="nif" onChange={handler}/>
-                </div>
-                <div className="formOne">
-                <FormInput label="Telefono" name="phone" onChange={handler}/>
-                <FormInput  label="Fecha de nacimiento" name="born"onChange={handler}/>
-                </div>
-                <div className="formOne">
-                <FormInput label="Correo Electrónico" name="email" onChange={handler}></FormInput>
-                <FormInput  label="Repita el email" name="emailValidation"onChange={handler}/>
-                </div>
-                <div className="formTwo">
-                <FormInput type="Password"  label="Contraseña" name="password" onChange={handler}/>
-                <FormInput type="Password"  label="Repita la Contraseña" name="passwordValidation" onChange={handler}/>
-                 
-                </div><br/>
-                
-                
-                <div>{mensaje}</div>
+            <div className="inputContainer twocols">
+                <Form.Item validateStatus={errors.name?.status} help={errors.name?.help}>
+                    <FormInput label="Nombre" name="name" onChange={updateUser} />
+                </Form.Item>
+                <Form.Item validateStatus={errors.lastname?.status} help={errors.lastname?.help}>
+                    <FormInput label="Apellidos" name="lastname" onChange={updateUser} />
+                </Form.Item>
             </div>
-            <button className='subbmit' onClick={()=>sendData()}>Subbmit</button><br/>
-            <CTAButton goto='' name='Home' text ='Home'/>
+            <div className="inputContainer">
+                <Form.Item validateStatus={errors.address?.status} help={errors.address?.help}>
+                    <FormInput label="Dirección" name="address" onChange={updateUser} />
+                </Form.Item>
+            </div>
+            <div className="inputContainer twocols">
+                <Form.Item validateStatus={errors.phone?.status} help={errors.phone?.help}>
+                    <FormInput label="Telefono" name="phone" onChange={updateUser} />
+                </Form.Item>
+                <Form.Item validateStatus={errors.born?.status} help={errors.born?.help}>
+                    <FormInput label="Fecha de nacimiento" name="born" onChange={updateUser} />
+                </Form.Item>
+            </div>
+            <div className="inputContainer twocols">
+                <Form.Item validateStatus={errors.email?.status} help={errors.email?.help}>
+                    <FormInput label="Correo Electrónico" name="email" onChange={updateUser}/>
+                </Form.Item>
+                <Form.Item validateStatus={errors.nif?.status} help={errors.nif?.help}>
+                    <FormInput label="Documento de identidad" name="nif" onChange={updateUser} />
+                </Form.Item>
+            </div>
+            <div className="inputContainer twocols">
+                <Form.Item validateStatus={errors.password?.status} help={errors.password?.help}>
+                    <FormInput type="Password" label="Contraseña" name="password" onChange={updateUser} />
+                </Form.Item>
+                <Form.Item validateStatus={errors.passwordValidation?.status} help={errors.passwordValidation?.help}>
+                    <FormInput type="Password" label="Repita la Contraseña" name="passwordValidation" onChange={updateUser} />
+                </Form.Item>
+            </div>
+            <div className="buttonContainer">
+                <CTAButton text="Enviar" onClick={() => sendData()}/>
+            </div>
         </div>
-        </>
-    )
-
-}
-
-
+      </div>
+    </>
+  );
+};
 
 export default Register;

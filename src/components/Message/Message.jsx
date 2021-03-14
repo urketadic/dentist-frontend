@@ -4,6 +4,10 @@ import {useState, useEffect} from 'react';
 
 const Message = (props)=>{
 
+    let style = 'messageContainer ';
+    if (props.style) style += props.style;
+    else style += 'error';
+
     const [classes, setClasses] = useState('message');
     const [message, setMessage] = useState();
     
@@ -22,7 +26,7 @@ const Message = (props)=>{
 
 
     return(
-            <div className='messageContainer'>
+            <div className={style}>
                 
                 <div className={classes}>{message}</div>
             

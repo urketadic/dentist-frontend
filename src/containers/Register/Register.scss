@@ -1,45 +1,56 @@
 /*contenedor*/
 
 .registerContainer{
-    width: 100%;
-    height: 100%;
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    position: relative;
     
-    /* Parrafos*/
-
-    .paragraph{
-        font-size: 18px;
-        margin:10px;
-
+    h2 {
+        font-weight: normal;
     }
+    
+    p {
+        color: #666;
+    }
+
+    .buttonContainer {
+        display:flex;
+        justify-content: flex-end;
+    }
+
+    .registerForm {
+        text-align: left;
+        max-width: 100%;
+        width:48em;
+        box-sizing: border-box;
+        padding:1em;
+    }
+
     /* Formulario */
-    .form{
-        display: flex;
-        flex-direction: column;
-        
-    }
-    .formOne{
-    
-        display: flex;
-        flex-direction: row;
-        margin :15px;
+    .inputContainer {
+        width:100%;
+        display:flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
 
+        .ant-row {
+            width:100%;
+        }
     }
-    .formTwo{
-        display: flex;
-        flex-direction: row;
-        margin-left :-3px;
-    }
-    .larger{
-        width: 1020px;
-    }
-    input{
-        width: 500px;
-        height: 30px;
-        border: violet 2px solid;
-        margin:5px;
+
+    .inputContainer.twocols {
+        .ant-row {
+            width:48%;
+        }
+
+        @media (max-width:575px) {
+            .ant-row {
+                width:100%;
+            }
+        }
     }
 
 }

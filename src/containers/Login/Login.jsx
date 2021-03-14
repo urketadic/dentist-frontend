@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import CTAButton from '../../components/CTAButton/CTAButton';
 import FormInput from '../../components/FormInput/FormInput';
@@ -17,8 +17,7 @@ const Login = (props) => {
 
     const history = useHistory();
     
-    let logged = localStorage.getItem('credentials');
-    if (logged) history.push('/profile');
+    if (localStorage.getItem('credentials')) history.push('/profile');
 
     const [credentials, setCredentials] = useState({email:'',password:''});
     const [errors, setErrors] = useState({});
@@ -27,7 +26,7 @@ const Login = (props) => {
 
     const updateCredentials = (key,value) => {
         setCredentials({...credentials, [key]: value});
-        if (Object.keys(errors).length > 0) setErrors(validate({...credentials, [key]: value}));
+        if (Object.keys(errors).length > 0) setErrors(validate({...credentials, [key]: value},'login'));
     }
 
     const handleResponse = (response) => {
@@ -40,14 +39,14 @@ const Login = (props) => {
         }
     }
 
-    const newMessage = (msg) => {
+    const newMessage = (msg, style = 'error') => {
         const key = (~(Math.random()*99999));
-        setMessage([...message,<Message key={key} text={msg}></Message>]);
+        setMessage([...message,<Message key={key} text={msg} style={style}></Message>]);
     }
 
     const submit = async () => {
         
-        const errs = validate(credentials);
+        const errs = validate(credentials,'login');
         setErrors(errs);
 
         if (Object.keys(errs).length === 0) {
@@ -59,6 +58,16 @@ const Login = (props) => {
             },500);
         }
     }
+
+    useEffect(()=>{
+        const pendingmessage = localStorage.getItem("pendingmessage");
+    if (pendingmessage) {
+        newMessage(pendingmessage,'success');
+        localStorage.removeItem("pendingmessage");
+    }
+    },[]);
+
+    
 
     return (
         <>
