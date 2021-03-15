@@ -1,73 +1,157 @@
 
 .vistaHome{
-
+    
+    h2 {
+        font-size: 2.3rem;
+        font-weight: 500;
+    }
+    .reacciona {
+        color: #FF518F!important;
+        font-weight:bold;
+    }
     .vistaMain{
         width: 100%;
-        height: 100%;
         display: flex;
         flex-direction: column;
     }
-    .slogan{
+    .sloganContainer {
+        background-color: #fbfbfb;;
         width: 100%;
-        height: 90px;
-        font-size: 20px;
+        .slogan {
+            text-align: left;
+            max-width: 100%;
+            width:56em;
+            box-sizing: border-box;
+            padding:1em;
+            margin:auto;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .buttonContainer {
+                margin-top:1em;
+            }
+
+            .dentist {
+                background-image: url('../../img/dentist.png');
+                width: 24em;
+                height: 36em;
+                background-size: contain;
+                background-position-x: center;
+                background-position-y: bottom;
+                background-repeat: no-repeat;
+                margin: 0 -5em -1em 0;
+            }
+
+            
+        }
+        @media (max-width:767px) {
+            .slogan {
+                flex-wrap: wrap;
+                overflow-x: hidden;
+            }
+            .dentist {
+                width: 100%!important;
+                min-width: 24em;
+            }
+            .buttonContainer {
+                display: flex;
+                justify-content: flex-end;
+            }
+            .sloganText {
+                width:100%
+            }
+        }
     }
+
+    .gMap {
+        width:100%;
+        height:35em;
+    }
+
+    .descripcion {
+        max-width: 100%;
+        width:64em;
+        box-sizing: border-box;
+        padding:1em;
+        margin: 2em auto;
+        
+        font-size: 0.9rem;
+
+        p {
+            color: #666;
+        }
+        
+        emphasys {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        .separator {
+            margin: 5em 0;
+            height:2px;
+            background-color: #DDD;
+        }
+    }
+
+    .tratamientos {
+        text-align: left;
+        emphasys {
+            color:#888;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+        .coleccionespecialidades{
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 2em 0;
+        
+            justify-content: center;
+            justify-content: space-evenly;
+        }
+        .especialidad{
+            width: 10em;
+            max-width: 100%;
+           // border: 2px solid rgb(7, 6, 7);
+            margin: .5em auto;
+            
+        }
+        img{
+            width: 100%;
+        }
+        .vistaDivEspecialidades{
+            width:24em;
+            max-width:100%;
+          /*  border: 2px solid rgb(173, 18, 173);*/
+            padding: 1em;
+        }
+        
+    }
+
     .vistaClinica{
-    
         width: 100%;
-       
-        height: 370px;
+        height: 25em;
         background-image: url('../../img/clinica\ dental\ foto2.jpg');
         background-size: cover;
         background-position: center;
-       
-        
     }
     .vistaFooter{
     
         width: 100%;
-        height: 100px;
+        box-sizing: border-box;
         background-color: rgb(70, 67, 67);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: white;
-    }
-    p{
-        font-size: 10px;
+        padding:1rem;
+        p{
+            font-size: 0.7rem;
+        }
     }
     
-}
-.coleccionespecialidades{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 700px;
-
-    justify-content: center;
-    justify-content: space-evenly;
-}
-.especialidad{
-    width: 200px;
-    height: 200px;
-   // border: 2px solid rgb(7, 6, 7);
-    margin-left: 70px;
-    
-}
-.h3{
-    color: rgb(177, 10, 177);
-
-}
-img{
-    display: flex;
-    width: 200px;
-    height: 200px;
-}
-.vistaDivEspecialidades{
-    width:350px ;
-    height: 350px;
-  /*  border: 2px solid rgb(173, 18, 173);*/
-    margin: 15px;
 }

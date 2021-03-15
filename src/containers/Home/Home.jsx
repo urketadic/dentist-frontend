@@ -1,13 +1,13 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton/CTAButton';
 import Header from '../../components/Header/Header';
-import implante from '../../img/implante.jpg';
-import ortodoncia from '../../img/ortodoncia.jpg';
-import protesis from '../../img/protesis.jpg';
-import endodoncia from '../../img/endodoncia.jpg';
-import Odontopediatria from '../../img/Odontopediatria.jpg';
-import cirugia from '../../img/cirugia.jpg';
+import implante from '../../img/implante.png';
 import '../Home/Home.scss';
+import ortodoncia from '../../img/ortodoncia.png';
+import protesis from '../../img/protesis.png';
+import endodoncia from '../../img/endodoncia.png';
+import Odontopediatria from '../../img/odontopediatria.png';
+import cirugia from '../../img/cirugia.png';
 
 const Home =()=>{
 
@@ -17,69 +17,80 @@ const Home =()=>{
             <Header home="true"></Header>
                 
             <main className='vistaMain'>
-                <div className="slogan">
-                    <br/>
-                   <strong>¿Molestias dentales?<br/>
-                    ReacTiona!!!! Ven a React Dent <br/>
-                    Registrate y pide tu primera  Cita Gratis ahora.
-                   </strong>
+                <div className="sloganContainer">
+                    <div className="slogan">
+                        <div className="sloganText">
+                            <h2>¿Molestias dentales?<br/>
+                            <span className="reacciona">¡Reacciona!</span> Ven a React Dent </h2>
+                            Regístrese y pida su primera cita gratis ahora.
+                            <div className="buttonContainer">
+                                <CTAButton text="Regístrate" goto="register"></CTAButton>
+                            </div>
+                        </div>
+                        <div className="dentist">
+                        </div>
+                    </div>
                 </div>
-                <br/>
-                <div className="vistaClinica"></div>
+                <iframe className="gMap" style={{border:0}} loading="lazy"
+src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJu25r3UxPYA0RUDakqjsJ16s&key=AIzaSyDGUWXjv7ggrWj32zIwAxOqZJIdH4x4lP8"></iframe>
              
-                    <div>
-                    <h1>Tratamientos que realizamos desde nuestra clínica dental en Valencia</h1>
-                    <h3 className='h3'>
-                        React Dent es una clínica dental en Valencia formada por un equipo profesional que cuenta con unas instalaciones equipadas con los últimos avances tecnológicos. Somos especialistas en odontología mínimamente invasiva, trabajamos para mantener y cuidar tus dientes, respetando siempre, los sistemas naturales bucodentales.
-                    </h3>
-                    <h3 className='h3'> Queremos ser tu dentista en Valencia de confianza.</h3>
-                    <div className="coleccionespecialidades">
-                        <div className='vistaDivEspecialidades'>
-                            <div className= "especialidad">
-                            <img src={implante} />
+                <div className="descripcion">
+                    <p>En React Dent contamos con un equipo de los mejores profesionales y unas instalaciones equipadas con los últimos avances tecnológicos. Somos especialistas en odontología mínimamente invasiva; trabajamos para mantener y cuidar tus dientes respetando siempre los sistemas naturales bucodentales.</p>
+                    <emphasys>Queremos ser tu dentista de confianza en Valencia.</emphasys>
+                    <div className="separator"></div>
+                    <div className="tratamientos">
+                        <emphasys>CONSULTAS Y PRUEBAS PRESENCIALES</emphasys>
+                        <h2>Consultas, pruebas y tratamientos al mejor precio.</h2>
+                        <br></br>
+                        <div className="coleccionespecialidades">
+                            <div className='vistaDivEspecialidades'>
+                                <div className= "especialidad">
+                                <img src={implante} />
+                                </div>
+                                <h3>Implantes</h3>
+                                <p>Un implante dental es una raíz de titanio que se coloca como soporte para sustituir dientes que el paciente ha perdido.</p>
+                                
                             </div>
-                            <h2 className='h2'>Implantes</h2>
-                            <h3 className='h3'>Un implante dental es una raíz de titanio que se coloca como soporte para sustituir dientes que el paciente ha perdido</h3>
-                            
-                        </div>
-                        <div className='vistaDivEspecialidades'>
-                            <div className="especialidad">
-                            <img src={protesis} />
-                            </div>
-                            <h2 className='h2'>Protesis</h2>
-                            <h3 className='h3'>Las prótesis dentales son los dientes postizos que sustituyen a los dientes naturales. Cuando falta uno o varios dientes</h3>
+                            <div className='vistaDivEspecialidades'>
+                                <div className="especialidad">
+                                <img src={protesis} />
+                                </div>
+                                <h3>Prótesis</h3>
+                                <p>Las prótesis dentales son los dientes postizos que sustituyen a los dientes naturales. Suplen uno o varios dientes.</p>
 
-                        </div>
-                        <div className='vistaDivEspecialidades'>
-                            <div className="especialidad">
-                                <img src={endodoncia} />
                             </div>
-                            <h2 className='h2'>Endodoncia</h2>
-                            <h3 className='h3'>Es un tratamiento necesario de realizar cuando en un diente tenemos una infección o una pulpitis irreversible</h3>
-                        </div>
-                        <div className='vistaDivEspecialidades'>
-                            <div className="especialidad">
-                            <img src={ortodoncia} />
+                            <div className='vistaDivEspecialidades'>
+                                <div className="especialidad">
+                                    <img src={endodoncia} />
+                                </div>
+                                <h3>Endodoncia</h3>
+                                <p>Es un tratamiento necesario de realizar cuando en un diente tenemos una infección o una pulpitis irreversible.</p>
                             </div>
-                            <h2 className='h2'>Ortodoncia</h2>
-                            <h3 className='h3'>La ortodoncia es una especialidad de la odontología que corrige la malposición de los dientes para colocarlos en su lugar correcto</h3>
-                        </div>
-                        <div className='vistaDivEspecialidades'>
-                            <div className="especialidad">
-                            <img src={cirugia} />
+                            <div className='vistaDivEspecialidades'>
+                                <div className="especialidad">
+                                <img src={ortodoncia} />
+                                </div>
+                                <h3>Ortodoncia</h3>
+                                <p>La ortodoncia es una especialidad de la odontología que corrige la malposición de los dientes para colocarlos en su lugar correcto.</p>
                             </div>
-                            <h2 className='h2'>Cirugía Oral</h2>
-                            <h3 className='h3'>Encargada del diagnóstico, prevención y a veces, tratamiento de las patologías orales.</h3>
-                        </div>
-                        <div className='vistaDivEspecialidades'>
-                            <div className="especialidad">
-                                <img src={Odontopediatria} alt=""/>
+                            <div className='vistaDivEspecialidades'>
+                                <div className="especialidad">
+                                <img src={cirugia} />
+                                </div>
+                                <h3>Cirugía Oral</h3>
+                                <p>Encargada del diagnóstico, prevención y a veces, tratamiento de las patologías orales.</p>
                             </div>
-                            <h2 className='h2'>Odontopediatria</h2>
-                            <h3 className='h3'>Es la especialidad de la odontología que se encarga del cuidado de la salud bucodental del niño desde que nace hasta los 16 años.</h3>
+                            <div className='vistaDivEspecialidades'>
+                                <div className="especialidad">
+                                    <img src={Odontopediatria} alt=""/>
+                                </div>
+                                <h3>Odontopediatria</h3>
+                                <p>Es la especialidad de la odontología que se encarga del cuidado de la salud bucodental del niño desde que nace hasta los 16 años.</p>
+                            </div>
                         </div>
                     </div>
-                    </div>
+                </div>
+                <div className="vistaClinica"></div>
             </main>
 
             <footer className='vistaFooter'>
