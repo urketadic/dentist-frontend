@@ -6,32 +6,39 @@ import FormInput from '../../components/FormInput/FormInput';
 import './New-appointment.scss'
 import LeftMenu from '../../components/LeftMenu/LeftMenu';
 import axios from "axios";
+import Calendario from '../../components/DatePicker';
+import DatePicker from '../../components/DatePicker';
+
 
 const Appointment = (props)=>{
 
 
       let history = useHistory();
       let credentials = JSON.parse(localStorage.getItem('credentials'));
+      //console.log(credentials)
 
        if(!credentials) history.push('/login');
 
     const [appointment, setAppointment] = useState({
 
-        userId: '',
+        userId: credentials.user.id,
         dentistId: '',
         date: '',
         duration: '',
-        comment: '',
-        paid: ''
+        comment: ''
+        
     })
 
 
       //handler , asi sabremos el estado de los inputs en todo momento
 
       const handler = (name,value)=>{
-        setAppointment({...appointment, [name]:value});
+        setAppointment({...appointment, [name]:value });
         
       }
+    
+      
+
      
     // useEffect , manejo del estado de los componentes
 
@@ -42,28 +49,35 @@ const Appointment = (props)=>{
 
      useEffect(()=>{
  
-       console.log('estoy aqui')
+       console.log('me estoy actualizando ,estoy aqui ya sabes useEffect')
     })  
 
 
       // Mis Funciones
 
       const sendData = async()=>{
-        let userId = 14
-
+        
+        let userId =  credentials.user.id;
+        console.log(userId)
        let appointmentData={
           
             dentistId: appointment.dentistId,
             date: appointment.date,
             duration: appointment.duration,
-            comment: appointment.comment,
-            paid: appointment.paid
+            comment: appointment.comment
+            
              
            }
            console.log(appointmentData);
             
-            let endpointAppointments = `http://localhost:3000/users/${userId}/appointments`
-            let dataResults= await axios.post(endpointAppointments,appointmentData);
+            let endpointAppointments = `http://localhost:3001/users/${userId}/appointments`
+
+            let token = credentials.token;
+            console.log(token)
+            
+            let dataResults= await axios.post(endpointAppointments,appointmentData,{headers:{"authorization":"Bearer " + token}});
+            
+            
          if(dataResults.status == 200){
            alert(`${credentials.user.name} : Su Cita Se ha Generado Correctamente`)
          }else{
@@ -71,59 +85,61 @@ const Appointment = (props)=>{
          }
       }
 
-
+      const selectedDay = (val) =>{
+        console.log(val)
+    };
       
 
 
     return(
-       <>
-       <Header></Header>
-      <div className="container">
-           <div className="leftMenu">
+      
+      <>
+      <Header></Header>
+      <pre className="pre">{JSON.stringify(appointment)}</pre>
+      <div className="container"> 
+        <div className="leftMenu">
             <LeftMenu/> 
            </div>
-           <div className="right">
+        <div className="right">
            <div className="bienvenida">
              <h3 className="h3">Hola {credentials.user.name}</h3>
            </div>
-           <main className="cuerpo">
+           <div className="calendario">
+              <div className="App">
+              <DatePicker  name="date" onChange={(e)=>handler(e.target.name,e.target.value)}/>
+              </div>
+           </div>
+           <div className="cuerpo">
+                 
                 <div className="form">
-                  <div className="input">
-                   <h5>Nombre del cliente</h5>
-                   <FormInput   label ={credentials.user.name} name="userId" onChange={handler}/>
-                  </div>
-                  <div className="input">
-                  <h5>Dentista :</h5>
-                  <select name="dentistId" id="dentists">
-                          <option value="1">Dr.Iglesias fornes David</option>
-                          <option value="2">Dra.Flores Marin Lorena</option>
-                          <option value="3">Dr.Zemmari Kissani Tarik</option>
-                          <option value="4">Dra.Sanz Iglesias Noemi</option>
-                  </select>
-                  </div>
-                  <div className="input">
-                   <h5>Fecha de su Cita</h5>
-                   <FormInput label="Proxima cita" name="date" onChange={handler}/>
-                  </div>
-                  <div className="input">
-                  <h5>Duracion Aprox de la consulta</h5>
-                   <FormInput name="duration" onChange={handler}/>
-                  </div>
-                  <div className="input">
-                  <h5>Dolencia</h5>
-                   <FormInput name="comment" onChange={handler}/>
-                  </div>
-                  <div className="input">
-                  <h5>Pago de la consulta</h5>
-                  <FormInput name="paid"onChange={handler}/>
-                  </div>
-                  <button className='subbmit' onClick={sendData}>Subbmit</button><br/>
-               <div/>
-          </div>     
-        </main>
+                  <div className="lateral"></div>
+                   <div className="input">
+                    <select  id="dentistId" name="dentistId" value='1' onChange={(e)=>handler(e.target.name,e.target.value)} >
+                        <option  value='1' >Dr.Iglesias fornes David</option>
+                        <option  value='2 '>Dra.Flores Marin Lorena</option>
+                        <option  value='3' >Dr.Zemmari Kissani Tarik</option>
+                        <option  value='4' >Dra.Sanz Iglesias Noemi</option>
+                    </select>
+                   </div>
+                    <div className="input">
+                   <FormInput label="Duration estimada maximo 2H" name="duration" onChange={handler}/>
+                   </div>
+                   <div className="input">
+                   <FormInput label="¿ Cual es Su Dolencia ?" name="comment" onChange={handler}/>
+                   </div>
+                   <div className="lateral"></div>
+                 <div/>
+               
+           </div>
+<button className='subbmit' onClick={sendData}>Subbmit</button><br/> 
+         </div> 
+
+        </div>
+
        </div> 
-     </div>
-        </>
+      
+     </>
+       
     )
 }
 
