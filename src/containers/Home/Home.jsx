@@ -36,10 +36,10 @@ src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJu25r3UxPYA0RUDakq
              
                 <div className="descripcion">
                     <p>En React Dent contamos con un equipo de los mejores profesionales y unas instalaciones equipadas con los últimos avances tecnológicos. Somos especialistas en odontología mínimamente invasiva; trabajamos para mantener y cuidar tus dientes respetando siempre los sistemas naturales bucodentales.</p>
-                    <emphasys>Queremos ser tu dentista de confianza en Valencia.</emphasys>
+                    <p className="emphasys">Queremos ser tu dentista de confianza en Valencia.</p>
                     <div className="separator"></div>
                     <div className="tratamientos">
-                        <emphasys>CONSULTAS Y PRUEBAS PRESENCIALES</emphasys>
+                        <p className="emphasys">CONSULTAS Y PRUEBAS PRESENCIALES</p>
                         <h2>Consultas, pruebas y tratamientos al mejor precio.</h2>
                         <br></br>
                         <div className="coleccionespecialidades">
@@ -95,7 +95,7 @@ src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJu25r3UxPYA0RUDakq
 
             <footer className='vistaFooter'>
                <div className="politica">
-                   <p>Política de privacidad - Términos y condiciones - Política de Cookies </p>
+                   <p><a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target="_blank">Política de privacidad - Términos y condiciones - Política de Cookies</a></p>
                </div>
                <div className="adress">
                  <p>91 654 321 321 - C/ Ratón Pérez 52, 46001 Valencia</p>

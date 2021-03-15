@@ -74,7 +74,7 @@
         width:64em;
         box-sizing: border-box;
         padding:1em;
-        margin: 2em auto;
+        margin: 4em auto;
         
         font-size: 0.9rem;
 
@@ -82,7 +82,7 @@
             color: #666;
         }
         
-        emphasys {
+        .emphasys {
             font-weight: 500;
             font-size: 1rem;
         }
@@ -95,7 +95,7 @@
 
     .tratamientos {
         text-align: left;
-        emphasys {
+        .emphasys {
             color:#888;
         }
         h2 {
@@ -149,8 +149,13 @@
         align-items: center;
         color: white;
         padding:1rem;
-        p{
-            font-size: 0.7rem;
+        p {
+            font-size: 0.8rem;
+        }
+        a {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
         }
     }
     

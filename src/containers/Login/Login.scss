@@ -48,15 +48,13 @@
     }
 
     @media (max-width: 991px) {
+        flex-flow:column;
         .login, .register {
             padding: 0 1em;
             max-width: 24em;
         }
         .separator {
             display:none;
-        }
-        .loginContainer {
-            flex-flow:column;
         }
         .register {
             text-align: left;
