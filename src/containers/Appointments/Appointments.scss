@@ -23,7 +23,7 @@
     .appointment {
         background-color: #FFF;
         margin: 0 5% 1.5em 5%;
-        padding: 1.7em 1em;
+        padding: 1.7em 1.3em;
         position: relative;
         display: flex;
         justify-content: flex-start;
@@ -36,6 +36,7 @@
             font-weight: bold;
             text-align: right;
             width: 6em;
+            flex-shrink: 0;
         }
         .row {
             display:flex;
@@ -45,8 +46,13 @@
             .title {
                 font-weight: 500;
                 text-align: right;
-                width:9em;
+                width:8.5em;
                 margin-right:1.5em;
+                flex-shrink: 0;
+            }
+            .datum {
+                text-align: left;
+                flex-shrink: 1;
             }
             margin: .5em 0;
         }

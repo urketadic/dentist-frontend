@@ -7,26 +7,32 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
 
-.logo {
-  width: 12em;
-  height: 3em;
-  background-image: url("../../logo.png");
-  background-size:contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor:pointer;
-}
+  .logo {
+    width: 12em;
+    height: 3em;
+    background-image: url("../../logo.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor:pointer;
+  }
 
-header {
-  border: 1px solid $border-color;
-}
-
-@media (max-width:575px) {
+  @media (max-width:575px) {
     .logo.collapse {
         width: 3.3em;
         background-size: cover;
         background-position-x: left;
     }
+    .Avatar .name {
+      display:none;
+    }
 }
+
+}
+
+
+header {
+  border: 1px solid $border-color;
+}
+
