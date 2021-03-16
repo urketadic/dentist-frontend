@@ -2,14 +2,31 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import LeftMenu from '../../components/LeftMenu/LeftMenu';
 import {useHistory} from 'react-router-dom';
-import './Profile.scss';
+import {useState , useEffect} from 'react';
 import Avatar from '../../components/Avatar/Avatar'
 import moment from 'moment'
+import './Actualizar-Profile.scss'
+import FormInput from '../../components/FormInput/FormInput';
 
 
 
+const ActualizarProfile = (props) => {
 
-const Profile = (props) => {
+    const [user,setUser]= useState({
+
+        email: "",
+        name: "",
+        lastname: "",
+        address: "",
+        nif: "",
+        phone: ""
+        
+    })
+
+    
+
+
+    
 
     let history = useHistory();
     
@@ -19,11 +36,21 @@ const Profile = (props) => {
 
     let  UserAge = Math.floor(moment().diff(credentials.user.born, 'years',true));
 
-    const SwitshToActualizarPerfil=()=>{
-        history.push('/Actualizar-profile');
+    const GotoUpdateProfile=()=>{
+        history.push('/Actualizar-Profile');
     }
-    const SwitshToLogin=()=>{
-        history.push('/profile/new-appointment');
+
+    const Actualizar=()=>{
+
+        let newUserData = {
+
+             email : user.email,
+             name: user.email,
+             lastname: user.lasname,
+             address: user.adress,
+             nif: user.nif,
+             phone: user.phone
+         }
     }
 
     return (
@@ -37,12 +64,14 @@ const Profile = (props) => {
                     <div className="UserData">
                       <div className="uno">
                           <div className="avatar">
-                              <Avatar name={credentials.user.name} styling="big"/>
+                              <Avatar name={credentials.user.name} styling='big' />
                           </div>
                           <div className="datosPersonalesUno">
+                            
                              <div>{credentials.user.name}  {credentials.user.lastname}</div>
                              <div>{credentials.user.email}</div>
                              <div>Edad {UserAge}  años</div>
+
                 
                           </div>
                       </div>
@@ -51,21 +80,21 @@ const Profile = (props) => {
                              <div>Información De Contacto</div> 
                              <div>{credentials.user.phone}</div> 
                              <div>{credentials.user.address}</div>
+                               
                           </div>
                       </div>
-                      <div className="tres">
-                          <div className="actualizarDatos">
-                              <div className="hoverUpdate" onClick={()=>{SwitshToActualizarPerfil()}}>Actualizar Mis Perfil</div> 
-                          </div>
-                      </div>
-   
+                
                     </div>
-                <div className="ContenedorCita">
-                   <div className="FotoCalendario"></div>
-                   <div className="PideCita">
-                       <button className="botonDos" onClick={()=>{SwitshToLogin()}}>Pide Tu Cita</button>
+                   <div className="Actualizar">
+                      <FormInput  label="Introduzca su Nombre"/>
+                      <FormInput label="Introduzca sus apellidos"/>
+                      <FormInput label="Introduzca su E-mail"/>
+                      <FormInput label="Introduzca su Telefono"/>
+                      <FormInput label="Introduzca su Dirección"/>
+                      <FormInput label="Introduzca su Nuevo nif"/>
+                      <button className="boton" onClick={()=>{Actualizar()}}>Actualizar</button>
                    </div>
-                  </div>
+                  
                    
                 </div>
             </div>
@@ -77,4 +106,4 @@ const Profile = (props) => {
     )
 }
 
-export default Profile;
+export default ActualizarProfile;

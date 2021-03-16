@@ -7,6 +7,8 @@ import Register from './containers/Register/Register';
 import Profile from './containers/Profile/Profile';
 import NewAppointment from './containers/New-appointment/New-appointment';
 import Appointments from './containers/Appointments/Appointments';
+import ActualizarProfile from './containers/Actualizar-Profile/Actualizar-Profile';
+
 
 function App() {
   return (
@@ -23,6 +25,9 @@ function App() {
           <Route path='/profile' exact component ={Profile}/>
           <Route path='/profile/my-appointments' exact component={Appointments}/>
           <Route path='/profile/new-appointment' exact component={NewAppointment}/>
+          <Route path='/Actualizar-Profile' exact component={ActualizarProfile}/>
+
+
          
           
         </Switch>

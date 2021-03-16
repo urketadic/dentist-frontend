@@ -63,7 +63,7 @@ const Appointments = (props) => {
     }
 
     const cancelAppointment = (id) => {
-        let confirmed = confirm('¿Seguro que desea cancelar la cita?');
+        /*let confirmed = confirm('¿Seguro que desea cancelar la cita?');
         if (confirmed) {
             setLoading(true);
             setTimeout(()=>{
@@ -73,7 +73,7 @@ const Appointments = (props) => {
                 .then(()=>{newMessage('Cita cancelada con éxito','success')})
                 .catch((err)=>{handleResponse({data:{message:'Error de conexión.'}})});
             },500);
-        }
+        }*/
     }
 
     return (

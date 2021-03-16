@@ -16,6 +16,118 @@
         flex: 1 1 auto;
         background-color: #fbfbfb;
     }
+    .cuerpo{
+        width: 62.5em;
+        height: 26em;
+        //border: 0.2em solid violet;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    // Nombre del Cliente Email y Edad
+
+    .UserData{
+        margin-left: 5em;
+        width: 25em;
+        height: 18em;
+        //border:0.2em solid black;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .uno{
+       width: 25em;
+        height: 45%;
+     //   border:solid 0.2em blue;
+        display:flex;
+        flex-direction: row;
+     }
+
+     // Avatar
+     .avatar{
+         width: 10em;
+         height: 8em;
+     
+
+     }
+     .datosPersonalesUno{
+         margin-left: 2em;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: flex-start;
+         width: 15em;
+         height: 8em;
+     }
+     
+     .dos{
+        width: 25em;
+        height: 45%;
+       // border:solid 0.2em blue;
+    }
+
+    //informacion de contacto Telefono y Direccion Del Cliente
+
+    .datosPersonalesDos{
+        margin-top: 2em;
+        width: 15em;
+        height: 8em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        
+     }
+    .tres{
+        width: 25em;
+        height: 10%;
+        color:#FF518F ;
+        display:flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        
+    }
+    .hoverUpdate:hover{
+       
+        color: blue;
+        }
+    .ContenedorCita{
+        margin-right: 5em;
+        width: 22em;
+        height: 18em;
+       
+        display: flex;
+        flex-direction: column;
+    }
+    .FotoCalendario{
+        margin-top: -3em;
+        width: 22em;
+        height: 18em;
+        background-image: url('../../img/pideTuCita.png');
+        background-size: contain;
+        background-position: center;
+    
+    }
+    .PideCita{
+        width: 22em;
+        height: 2em;
+   
+    }
+    .botonDos{
+        width: 8em;
+        height: 2.5em;
+        background-color: #FF518F;
+        color : rgb(255, 255, 255);
+        border:rgb(211, 204, 204);
+        border-radius: 2em;
+    }
+    .botonDos:hover{
+        color:rgb(30, 30, 180)
+    }
+    }
     
     .buttonContainer {
         margin-bottom:2em;
@@ -25,4 +137,4 @@
         flex: 0 1 auto;
     }
 
-}
+
