@@ -83,14 +83,15 @@ const Appointment = (props)=>{
            alert(`Ha ocurrido un error, Vuelva a intentarlo ${credentials.user.name} , si el error persiste Porfavor contantenos por telefono`)
          }
       }
-      
+        //Chivato
+      //<pre className="pre">{JSON.stringify(appointment)}</pre>
 
 
     return(
       
       <>
       <Header></Header>
-      <pre className="pre">{JSON.stringify(appointment)}</pre>
+      
       <div className="container"> 
         <div className="leftMenu">
             <LeftMenu/> 
