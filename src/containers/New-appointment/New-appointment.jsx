@@ -6,8 +6,7 @@ import FormInput from '../../components/FormInput/FormInput';
 import './New-appointment.scss'
 import LeftMenu from '../../components/LeftMenu/LeftMenu';
 import axios from "axios";
-import Calendario from '../../components/DatePicker';
-import DatePicker from '../../components/DatePicker';
+import DatePicker from 'react-horizontal-datepicker';
 
 
 const Appointment = (props)=>{
@@ -84,10 +83,6 @@ const Appointment = (props)=>{
            alert(`Ha ocurrido un error, Vuelva a intentarlo ${credentials.user.name} , si el error persiste Porfavor contantenos por telefono`)
          }
       }
-
-      const selectedDay = (val) =>{
-        console.log(val)
-    };
       
 
 
@@ -106,7 +101,7 @@ const Appointment = (props)=>{
            </div>
            <div className="calendario">
               <div className="App">
-              <DatePicker  name="date" onChange={(e)=>handler(e.target.name,e.target.value)}/>
+              <DatePicker getSelectedDay={(val)=>{handler('date',val)}}/>
               </div>
            </div>
            <div className="cuerpo">
