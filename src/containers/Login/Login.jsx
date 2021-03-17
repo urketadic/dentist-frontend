@@ -10,6 +10,8 @@ import { Form } from 'antd';
 import axios from 'axios';
 import Message from '../../components/Message/Message';
 import './Login.scss';
+import {connect} from 'react-redux';
+import {LOGIN} from '../../redux/types'
 
 
 
@@ -17,8 +19,9 @@ const Login = (props) => {
 
     const history = useHistory();
     
-    const cred = localStorage.getItem('credentials');
-    if (cred)
+    const cred = props.credentials;
+    //localStorage.getItem('credentials');
+    if (cred.user?.id)
     if (cred.user.admin) history.push('/admin')
     else history.push('/profile');
 
@@ -34,7 +37,8 @@ const Login = (props) => {
 
     const handleResponse = (response) => {
         if (response.status == 200) {
-            localStorage.setItem('credentials',JSON.stringify(response.data));
+           // localStorage.setItem('credentials',JSON.stringify(response.data));
+            props.dispatch({type:LOGIN,payload:response.data});
             if (response.data.user.admin) history.push('/admin');
             else history.push('/profile');
         } else {
@@ -58,6 +62,7 @@ const Login = (props) => {
             setTimeout(()=>{
                 axios.post('http://localhost:3001/login',credentials)
                 .then(handleResponse)
+                
                 .catch((err)=>{handleResponse({data:{message:'Error de conexión.'}})});
             },500);
         }
@@ -114,4 +119,4 @@ const Login = (props) => {
     )
 }
 
-export default Login;
+export default connect((state)=>({credentials: state.credentials}))(Login);

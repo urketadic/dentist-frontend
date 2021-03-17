@@ -3,8 +3,9 @@ import Header from '../../components/Header/Header';
 import LeftMenu from '../../components/LeftMenu/LeftMenu';
 import {useHistory} from 'react-router-dom';
 import './Profile.scss';
-import Avatar from '../../components/Avatar/Avatar'
-import moment from 'moment'
+import Avatar from '../../components/Avatar/Avatar';
+import moment from 'moment';
+import {connect} from 'react-redux';
 
 
 
@@ -12,10 +13,11 @@ import moment from 'moment'
 const Profile = (props) => {
 
     let history = useHistory();
+    let credentials = props.credentials;
     
-    let credentials = JSON.parse(localStorage.getItem('credentials'));
+    //let credentials = JSON.parse(localStorage.getItem('credentials'));
 
-    if(!credentials) history.push('/login');
+    if(!credentials.user?.id) history.push('/login');
 
     let  UserAge = Math.floor(moment().diff(credentials.user.born, 'years',true));
 
@@ -77,4 +79,4 @@ const Profile = (props) => {
     )
 }
 
-export default Profile;
+export default connect((state)=>({credentials:state.credentials}))(Profile);

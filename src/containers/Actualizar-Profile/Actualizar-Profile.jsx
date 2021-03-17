@@ -7,7 +7,7 @@ import Avatar from '../../components/Avatar/Avatar'
 import moment from 'moment'
 import './Actualizar-Profile.scss'
 import FormInput from '../../components/FormInput/FormInput';
-
+import {connect} from 'react-redux';
 
 
 const ActualizarProfile = (props) => {
@@ -24,15 +24,12 @@ const ActualizarProfile = (props) => {
     })
 
     
-
-
-    
-
     let history = useHistory();
+    let credentials=props.credentials;
     
-    let credentials = JSON.parse(localStorage.getItem('credentials'));
+  //  let credentials = JSON.parse(localStorage.getItem('credentials'));
 
-    if(!credentials) history.push('/login');
+    if(!credentials.user?.id) history.push('/login');
 
     let  UserAge = Math.floor(moment().diff(credentials.user.born, 'years',true));
 
@@ -106,4 +103,4 @@ const ActualizarProfile = (props) => {
     )
 }
 
-export default ActualizarProfile;
+export default connect((state)=>({credentials:state.credentials}))(ActualizarProfile);

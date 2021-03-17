@@ -3,7 +3,8 @@ import React from 'react';
 
 import {useHistory} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {CLOSE_MENU} from '../../redux/types';
+import {CLOSE_MENU , LOGOUT} from '../../redux/types';
+
 
 const LeftMenu = (props) => {
 
@@ -19,7 +20,8 @@ const LeftMenu = (props) => {
     }
 
     const logout = () => {
-        localStorage.removeItem('credentials');
+        //localStorage.removeItem('credentials');
+        props.dispatch({type:LOGOUT})
         history.push('/');
     }
     

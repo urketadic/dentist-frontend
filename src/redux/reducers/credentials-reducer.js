@@ -2,7 +2,7 @@ import {LOGIN, LOGOUT} from '../types';
 
 const initialState = {
     user : {},
-    jwt : ''
+    token : ''
 };
 
 const credentialsReducer = (state = initialState, action) => {

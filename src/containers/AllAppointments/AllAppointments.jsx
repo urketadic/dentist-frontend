@@ -7,16 +7,17 @@ import moment from 'moment';
 import Message from '../../components/Message/Message';
 import Loading from '../../components/Loading/Loading';
 import Switch from '../../components/Switch/Switch';
+import {connect} from 'react-redux';
 
 
 
 const AllAppointments = (props) => {
 
     let history = useHistory();
-    
-    let credentials = JSON.parse(localStorage.getItem('credentials'));
+    let credentials = props.credentials;
+   // let credentials = JSON.parse(localStorage.getItem('credentials'));
 
-    if(!credentials) history.push('/login');
+    if(!credentials.user?.id) history.push('/login');
 
     const [appointments, setAppointments] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -74,7 +75,7 @@ const AllAppointments = (props) => {
     }
 
     const cancelAppointment = (id) => {
-        /*let confirmed = confirm('¿Seguro que desea cancelar la cita?');
+        let confirmed = window.confirm('¿Seguro que desea cancelar la cita?');
         if (confirmed) {
             setLoading(true);
             setTimeout(()=>{
@@ -84,7 +85,7 @@ const AllAppointments = (props) => {
                 .then(()=>{newMessage('Cita cancelada con éxito','success')})
                 .catch((err)=>{handleResponse({data:{message:'Error de conexión.'}})});
             },500);
-        }*/
+        }
     }
 
     return (
@@ -138,4 +139,4 @@ const AllAppointments = (props) => {
     )
 }
 
-export default AllAppointments;
+export default connect((state)=>({credentials:state.credentials}))(AllAppointments);

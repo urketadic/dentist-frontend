@@ -7,16 +7,18 @@ import './New-appointment.scss'
 import LeftMenu from '../../components/LeftMenu/LeftMenu';
 import axios from "axios";
 import DatePicker from 'react-horizontal-datepicker';
+import {connect} from 'react-redux';
 
 
 const Appointment = (props)=>{
 
 
       let history = useHistory();
-      let credentials = JSON.parse(localStorage.getItem('credentials'));
-      //console.log(credentials)
+      let credentials= props.credentials;
+      //let credentials = JSON.parse(localStorage.getItem('credentials'));
+   
 
-       if(!credentials) history.push('/login');
+       if(!credentials.user?.id) history.push('/login');
 
     const [appointment, setAppointment] = useState({
 
@@ -139,4 +141,4 @@ const Appointment = (props)=>{
     )
 }
 
-export default Appointment;
+export default connect((state)=>({credentials:state.credentials}))(Appointment);

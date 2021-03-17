@@ -6,11 +6,13 @@ import {connect} from 'react-redux';
 import {OPEN_MENU} from '../../redux/types';
 
 
+
 const Header = (props)=>{
 
     let history = useHistory();
+    let credentials =props.credentials;
 
-    let credentials = JSON.parse(localStorage.getItem('credentials'));
+   // let credentials = JSON.parse(localStorage.getItem('credentials'));
 
 
     const goHome = () => {
@@ -31,7 +33,7 @@ const Header = (props)=>{
         left = <div className="menu" onClick={()=>{showMenu();}}><div></div><div></div><div></div></div>
     }
 
-    if (credentials) {
+    if (credentials.user?.id) {
         if (credentials.user.admin) right = <Avatar name={credentials.user.name} color='#444' goto="admin"></Avatar>
         else right = <Avatar name={credentials.user.name} goto="profile"></Avatar>
         logoClasses = 'logo collapse';
@@ -54,4 +56,4 @@ const Header = (props)=>{
     )
 }
 
-export default connect((state)=>({menu:state.menu}))(Header);
+export default connect((state)=>({credentials:state.credentials,menu:state.menu}))(Header);
