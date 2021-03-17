@@ -10,7 +10,7 @@ import Switch from '../../components/Switch/Switch';
 
 
 
-const Appointments = (props) => {
+const AllAppointments = (props) => {
 
     let history = useHistory();
     
@@ -39,7 +39,7 @@ const Appointments = (props) => {
     const fetchAppointments = (query = '') => {
         setLoading(true);
         setTimeout(()=>{
-            axios.get(`http://localhost:3001/users/${credentials.user.id}/appointments${query}`,{headers:{'authorization':'Bearer ' + credentials.token}})
+            axios.get(`http://localhost:3001/appointments${query}`,{headers:{'authorization':'Bearer ' + credentials.token}})
             .then(handleResponse)
             .catch((err)=>{handleResponse({data:{message:'Error de conexión.'}})});
         },500);
@@ -90,13 +90,13 @@ const Appointments = (props) => {
     return (
         <>
         <Header></Header>
-        <section className="appointmentsContainer">
+        <section className="allAppointmentsContainer">
             <LeftMenu></LeftMenu>
-            <div className="appointments">
+            <div className="allAppointments">
                 {message}
                 <Loading visible={loading}></Loading>
                 <div className="titleContainer">
-                    <div className="titulo">Mis citas</div>
+                    <div className="titulo">Todas las citas</div>
                     <Switch label='Próximas' checked={pending} onClick={()=>{togglePending();}}></Switch>
                 </div>
                 {appointments.map((appointment)=>{
@@ -112,6 +112,10 @@ const Appointments = (props) => {
                                 <div>{moment(appointment.date).format('H:mm')}</div>
                             </div>
                             <div className="data">
+                                <div className="row">
+                                    <div className="title">Cliente:</div>
+                                    <div className="datum">{appointment.User.name} {appointment.User.lastname}</div>
+                                </div>
                                 <div className="row">
                                     <div className="title">Dentista:</div>
                                     <div className="datum">{dentist}</div>
@@ -134,4 +138,4 @@ const Appointments = (props) => {
     )
 }
 
-export default Appointments;
+export default AllAppointments;

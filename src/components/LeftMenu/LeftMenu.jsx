@@ -60,7 +60,7 @@ const LeftMenu = (props) => {
     }
     if (history.location.pathname.split('/')[1] == 'admin') {
         labels = {
-            profile: 'Inicio',
+            profile: 'Panel',
             myappointments: 'Todas las citas',
             newappointment: 'Nueva cita'
         }

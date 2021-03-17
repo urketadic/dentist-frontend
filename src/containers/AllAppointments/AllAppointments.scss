@@ -1,5 +1,5 @@
 
-.appointmentsContainer {
+.allAppointmentsContainer {
     flex: 0 1 auto;
     display:flex;
     flex-direction: row;
@@ -24,7 +24,7 @@
         font-size: 1.8rem;
     }
     
-    .appointments {
+    .allAppointments {
         position: relative;
         height: 100%;
         flex: 1 1 auto;
