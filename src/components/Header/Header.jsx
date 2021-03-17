@@ -28,11 +28,12 @@ const Header = (props)=>{
         right = <CTAButton goto="login" text="Entrar o registrarte" styling="CTA"/>;
         logoClasses = 'logo collapse';
     } else {
-        left = <div className="menu" onClick={()=>{showMenu();}}><div></div><div></div></div>
+        left = <div className="menu" onClick={()=>{showMenu();}}><div></div><div></div><div></div></div>
     }
 
     if (credentials) {
-        right = <Avatar name={credentials.user.name} goto="profile"></Avatar>
+        if (credentials.user.admin) right = <Avatar name={credentials.user.name} color='#444' goto="admin"></Avatar>
+        else right = <Avatar name={credentials.user.name} goto="profile"></Avatar>
         logoClasses = 'logo collapse';
     }
 
@@ -41,7 +42,7 @@ const Header = (props)=>{
         <header>
             <div className='headerContainer'>
                 
-                <div>
+                <div className="menulogo">
                     {left}
                     <div className={logoClasses} onClick={goHome}></div>
                 </div>

@@ -17,7 +17,10 @@ const Login = (props) => {
 
     const history = useHistory();
     
-    if (localStorage.getItem('credentials')) history.push('/profile');
+    const cred = localStorage.getItem('credentials');
+    if (cred)
+    if (cred.user.admin) history.push('/admin')
+    else history.push('/profile');
 
     const [credentials, setCredentials] = useState({email:'',password:''});
     const [errors, setErrors] = useState({});
@@ -32,7 +35,8 @@ const Login = (props) => {
     const handleResponse = (response) => {
         if (response.status == 200) {
             localStorage.setItem('credentials',JSON.stringify(response.data));
-            history.push('/profile');
+            if (response.data.user.admin) history.push('/admin');
+            else history.push('/profile');
         } else {
             setLoading(false);
             newMessage(response.data.message);

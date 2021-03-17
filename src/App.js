@@ -8,6 +8,7 @@ import Profile from './containers/Profile/Profile';
 import NewAppointment from './containers/New-appointment/New-appointment';
 import Appointments from './containers/Appointments/Appointments';
 import ActualizarProfile from './containers/Actualizar-Profile/Actualizar-Profile';
+import Admin from './containers/Admin/Admin';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/profile/my-appointments' exact component={Appointments}/>
           <Route path='/profile/new-appointment' exact component={NewAppointment}/>
           <Route path='/Actualizar-Profile' exact component={ActualizarProfile}/>
+          <Route path='/admin' exact component ={Admin}/>
 
 
          

@@ -22,10 +22,14 @@ const Avatar = (props) => {
         letter = props.name.slice(0,1).toUpperCase();
         if (!props.styling || props.styling == 'small') name = props.name;
     }
+    let style;
+    if (props.color) {
+        style = {backgroundColor: props.color};
+    }
 
     return(
         <div onClick={onClick} className={styling}>
-            <div className="avatarPic">
+            <div className="avatarPic" style={style}>
                 <div className="letter">{letter}</div>
             </div>
             <div className="name">{name}</div>
