@@ -10,6 +10,7 @@ import mapDentist from "../../tools/map-dentist";
 import { QUEUE_MESSAGE } from "../../redux/types";
 import { Steps } from "antd";
 import "./Steps.css";
+import Message from '../../components/Message/Message';
 import DateTimePicker from "../../components/DateTimePicker/DateTimePicker";
 
 const { Step } = Steps;
