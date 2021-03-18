@@ -29,10 +29,14 @@ const FormInput = (props) => {
         onChange(key,value);
 
     }
+
+    useState(()=>{
+        if (props.value) setIsActive(true);
+    },[])
     
     return(
         <div className="formInput">
-            <CInput name={props.name} onChange={(e) => handleTextChange(e.target.name,e.target.value)} maxLength={props.maxLength}/>
+            <CInput value={props.value} name={props.name} onChange={(e) => handleTextChange(e.target.name,e.target.value)} maxLength={props.maxLength}/>
             <label htmlFor={props.name} className={ isActive ? "Active" : ""}>
                 {props.label}
             </label>

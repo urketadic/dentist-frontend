@@ -9,6 +9,8 @@ import { Form } from 'antd';
 import "./Register.scss";
 import Loading from "../../components/Loading/Loading";
 import Message from "../../components/Message/Message";
+import {connect} from 'react-redux';
+import {QUEUE_MESSAGE} from '../../redux/types';
 
 const Register = (props) => {
   let history = useHistory();
@@ -68,7 +70,7 @@ const Register = (props) => {
 
   const handleResponse = (response) => {
     if (response.status == 200) {
-      localStorage.setItem("pendingmessage", "Registrado exitosamente. Ya puede iniciar sesión.");
+      props.dispatch({type:QUEUE_MESSAGE, payload:{text:"Registrado exitosamente. Ya puede iniciar sesión.",type:'success'}});
       history.push("/login");
     } else {
       setLoading(false);
@@ -137,4 +139,4 @@ const Register = (props) => {
   );
 };
 
-export default Register;
+export default connect((state)=>({queuedmessage:state.message}))(Register);

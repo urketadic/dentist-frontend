@@ -5,8 +5,10 @@
 @import 'components/LeftMenu/LeftMenu';
 @import 'components/Message/Message';
 @import 'components/Switch/Switch';
+@import 'components/DateTimePicker/DateTimePicker';
 @import 'containers/Appointments/Appointments';
 @import 'containers/AllAppointments/AllAppointments';
+@import 'containers/New-appointment/New-appointment';
 
 .App {
     text-align: center;

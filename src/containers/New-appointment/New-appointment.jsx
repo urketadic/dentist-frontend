@@ -1,144 +1,180 @@
-import React, { useState ,useEffect} from 'react';
-import Header from '../../components/Header/Header'
-import {useHistory} from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import Header from "../../components/Header/Header";
+import { useHistory } from "react-router-dom";
 //import CTAButton from '../../components/CTAButton/CTAButton'
-import FormInput from '../../components/FormInput/FormInput';
-import './New-appointment.scss'
-import LeftMenu from '../../components/LeftMenu/LeftMenu';
+import FormInput from "../../components/FormInput/FormInput";
+import LeftMenu from "../../components/LeftMenu/LeftMenu";
 import axios from "axios";
-import DatePicker from 'react-horizontal-datepicker';
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
+import mapDentist from "../../tools/map-dentist";
+import { QUEUE_MESSAGE } from "../../redux/types";
+import { Steps } from "antd";
+import "./Steps.css";
+import DateTimePicker from "../../components/DateTimePicker/DateTimePicker";
 
+const { Step } = Steps;
 
-const Appointment = (props)=>{
+const Appointment = (props) => {
+  let history = useHistory();
+  let credentials = props.credentials;
+  //let credentials = JSON.parse(localStorage.getItem('credentials'));
 
+  if (!credentials.user?.id) history.push("/login");
 
-      let history = useHistory();
-      let credentials= props.credentials;
-      //let credentials = JSON.parse(localStorage.getItem('credentials'));
-   
+  const [loading, setLoading] = useState(true);
+  const [message, setMessage] = useState([]);
+  const [slots, setSlots] = useState([]);
+  const [current, setCurrent] = useState(0);
 
-       if(!credentials.user?.id) history.push('/login');
+  const [appointment, setAppointment] = useState({
+    userId: credentials.user.id,
+    dentistId: "",
+    date: "",
+    comment: "",
+  });
 
-    const [appointment, setAppointment] = useState({
+  const fetchSlots = (query = "") => {
+    setLoading(true);
+    setTimeout(() => {
+      axios
+        .get(`http://localhost:3001/users/${credentials.user.id}/appointments/slots${query}`, { headers: { authorization: "Bearer " + credentials.token } })
+        .then(handleSlotResponse)
+        .catch((err) => {
+          handleSlotResponse({ data: { message: "Error de conexión." } });
+        });
+    }, 500);
+  };
 
-        userId: credentials.user.id,
-        dentistId: '',
-        date: '',
-        duration: '',
-        comment: ''
-        
-    })
+  const handleSlotResponse = (response) => {
+    if (response.status == 200) {
+      setLoading(false);
+      setSlots(response.data);
+    } else {
+      setLoading(false);
+      newMessage(response.data.message);
+    }
+  };
 
+  const newMessage = (msg, style = "error") => {
+    const key = ~(Math.random() * 999999999);
+    setMessage([...message, <Message key={key} text={msg} style={style}></Message>]);
+  };
 
-      //handler , asi sabremos el estado de los inputs en todo momento
+  const handler = (name, value) => {
+    setAppointment({ ...appointment, [name]: value });
+  };
 
-      const handler = (name,value)=>{
-        setAppointment({...appointment, [name]:value });
-        
-      }
-    
-      
+  const sendData = async () => {
+    let userId = credentials.user.id;
+    console.log(userId);
+    let appointmentData = {
+      dentistId: appointment.dentistId,
+      date: appointment.date,
+      comment: appointment.comment,
+    };
 
-     
-    // useEffect , manejo del estado de los componentes
+    let endpointAppointments = `http://localhost:3001/users/${userId}/appointments`;
 
-     useEffect(()=>{
-     console.log('me acabo de montar')
-        
-    },[]);
+    let token = credentials.token;
 
-     useEffect(()=>{
- 
-       console.log('me estoy actualizando ,estoy aqui ya sabes useEffect')
-    })  
+    setLoading(true);
+    setTimeout(() => {
+      axios
+        .post(endpointAppointments, appointmentData, { headers: { authorization: "Bearer " + token } })
+        .then(handleResponse)
+        .catch((err) => {
+          handleResponse({ data: { message: "Error de conexión." } });
+        });
+    }, 500);
+  };
 
+  const handleResponse = (response) => {
+    if (response.status == 200) {
+      setLoading(false);
+      props.dispatch({ type: QUEUE_MESSAGE, payload: { text: "Cita pedida con éxito.", type: "success" } });
+      history.push("/profile/my-appointments");
+    } else {
+      setLoading(false);
+      newMessage(response.data.message);
+    }
+  };
 
-      // Mis Funciones
+  const setDentist = (value) => {
+    handler('dentistId',value);
+    setCurrent(1);
+  }
 
-      const sendData = async()=>{
-        
-        let userId =  credentials.user.id;
-        console.log(userId)
-       let appointmentData={
-          
-            dentistId: appointment.dentistId,
-            date: appointment.date,
-            duration: appointment.duration,
-            comment: appointment.comment
-            
-             
-           }
-           console.log(appointmentData);
-            
-            let endpointAppointments = `http://localhost:3001/users/${userId}/appointments`
+  const setDate = (value) => {
+    handler('date',value);
+    setCurrent(2);
+  }
 
-            let token = credentials.token;
-            console.log(token)
-            
-            let dataResults= await axios.post(endpointAppointments,appointmentData,{headers:{"authorization":"Bearer " + token}});
-            
-            
-         if(dataResults.status == 200){
-           alert(`${credentials.user.name} : Su Cita Se ha Generado Correctamente`)
-         }else{
-           alert(`Ha ocurrido un error, Vuelva a intentarlo ${credentials.user.name} , si el error persiste Porfavor contantenos por telefono`)
-         }
-      }
-        //Chivato
-      //<pre className="pre">{JSON.stringify(appointment)}</pre>
+  const dates = [
+    ['2021-03-18T08:00:00.000000','2021-03-18T10:00:00.000000'],
+    ['2021-03-19T08:00:00.000000','2021-03-19T10:00:00.000000'],
+    ['2021-03-20T08:00:00.000000','2021-03-20T10:00:00.000000'],
+    ['2021-03-21T08:00:00.000000','2021-03-21T10:00:00.000000'],
+    ['2021-03-22T08:00:00.000000','2021-03-22T10:00:00.000000'],
+    ['2021-03-23T08:00:00.000000','2021-03-23T10:00:00.000000'],
+    ['2021-03-24T08:00:00.000000','2021-03-24T10:00:00.000000'],
+    ['2021-03-25T08:00:00.000000','2021-03-25T10:00:00.000000'],
+    ['2021-03-26T08:00:00.000000','2021-03-26T10:00:00.000000','2021-03-26T17:00:00.000000'],
+    ['2021-03-27T08:00:00.000000','2021-03-27T10:00:00.000000'],
+    ['2021-03-28T08:00:00.000000','2021-03-28T10:00:00.000000'],
+    ['2021-03-29T08:00:00.000000','2021-03-29T10:00:00.000000']
+  ];
 
+  const steps = [
+    {
+      title: "Profesional",
+      content:
+      <div className='selectPro'>
+        <h3>¿Con qué profesional?</h3>
+        <div value="0" className="option" onClick={(e)=>{setDentist(e.target.value)}}>Asignar automáticamente<br/><small>(Más horarios disponibles)</small></div>
+        <div value="1" className="option" onClick={(e)=>{setDentist(e.target.value)}}>{mapDentist(1)}</div>
+        <div value="2" className="option" onClick={(e)=>{setDentist(e.target.value)}}>{mapDentist(2)}</div>
+        <div value="3" className="option" onClick={(e)=>{setDentist(e.target.value)}}>{mapDentist(3)}</div>
+        <div value="4" className="option" onClick={(e)=>{setDentist(e.target.value)}}>{mapDentist(4)}</div>
+      </div>
+      ,
+    },
+    {
+      title: "Horario",
+      content: <DateTimePicker handler={setDate} dates={dates}/>,
+    },
+    {
+      title: "Confirmación",
+      content: "Last-content",
+    },
+  ];
 
-    return(
-      
-      <>
+  const next = () => {
+    setCurrent(current + 1);
+  };
+
+  const prev = () => {
+    setCurrent(current - 1);
+  };
+
+  return (
+    <>
       <Header></Header>
-      
-      <div className="container"> 
-        <div className="leftMenu">
-            <LeftMenu/> 
-           </div>
+      <div className="container">
+        <LeftMenu></LeftMenu>
         <div className="right">
-           <div className="bienvenida">
-             <h3 className="h3">Hola {credentials.user.name}</h3>
-           </div>
-           <div className="calendario">
-              <div className="App">
-              <DatePicker getSelectedDay={(val)=>{handler('date',val)}}/>
-              </div>
-           </div>
-           <div className="cuerpo">
-                 
-                <div className="form">
-                  <div className="lateral"></div>
-                   <div className="input">
-                    <select  id="dentistId" name="dentistId" value='1' onChange={(e)=>handler(e.target.name,e.target.value)} >
-                        <option  value='1' >Dr.Iglesias fornes David</option>
-                        <option  value='2 '>Dra.Flores Marin Lorena</option>
-                        <option  value='3' >Dr.Zemmari Kissani Tarik</option>
-                        <option  value='4' >Dra.Sanz Iglesias Noemi</option>
-                    </select>
-                   </div>
-                    <div className="input">
-                   <FormInput label="Duration estimada maximo 2H" name="duration" onChange={handler}/>
-                   </div>
-                   <div className="input">
-                   <FormInput label="¿ Cual es Su Dolencia ?" name="comment" onChange={handler}/>
-                   </div>
-                   <div className="lateral"></div>
-                 <div/>
-               
-           </div>
-<button className='subbmit' onClick={sendData}>Subbmit</button><br/> 
-         </div> 
-
+          <div className="title">Nueva cita</div>
+          <div className="form">
+            <Steps current={current}>
+              {steps.map((item) => (
+                <Step key={item.title} title={item.title} />
+              ))}
+            </Steps>
+            <div className="steps-content">{steps[current].content}</div>
+          </div>
         </div>
+      </div>
+    </>
+  );
+};
 
-       </div> 
-      
-     </>
-       
-    )
-}
-
-export default connect((state)=>({credentials:state.credentials}))(Appointment);
+export default connect((state) => ({ credentials: state.credentials }))(Appointment);

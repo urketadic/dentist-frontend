@@ -11,7 +11,7 @@ import axios from 'axios';
 import Message from '../../components/Message/Message';
 import './Login.scss';
 import {connect} from 'react-redux';
-import {LOGIN} from '../../redux/types'
+import {LOGIN,DELETE_MESSAGE} from '../../redux/types'
 
 
 
@@ -62,17 +62,15 @@ const Login = (props) => {
             setTimeout(()=>{
                 axios.post('http://localhost:3001/login',credentials)
                 .then(handleResponse)
-                
                 .catch((err)=>{handleResponse({data:{message:'Error de conexión.'}})});
             },500);
         }
     }
 
     useEffect(()=>{
-        const pendingmessage = localStorage.getItem("pendingmessage");
-    if (pendingmessage) {
-        newMessage(pendingmessage,'success');
-        localStorage.removeItem("pendingmessage");
+    if (props.queuedmessage.text) {
+        newMessage(props.queuedmessage.text,props.queuedmessage.type);
+        props.dispatch({type:DELETE_MESSAGE});
     }
     },[]);
 
@@ -119,4 +117,4 @@ const Login = (props) => {
     )
 }
 
-export default connect((state)=>({credentials: state.credentials}))(Login);
+export default connect((state)=>({credentials: state.credentials,queuedmessage:state.message}))(Login);

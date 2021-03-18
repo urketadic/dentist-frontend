@@ -1,0 +1,84 @@
+.dateTimePicker {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+    margin-top:1em;
+
+    .dateContainer {
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        .icon{
+            width:1.6em;
+            height:1.6em;
+            margin-top: .5em;
+            cursor: pointer;
+            color: $pink;
+            svg {
+                width:1.6em;
+                height:1.6em;
+            }
+        }
+
+        .icon:hover{
+            color: $pink-dark;
+        }
+
+        .icon.disabled {
+            opacity:0.5;
+            cursor:auto;
+            color: $grey;
+        }
+
+        .date {
+            width: 4.9em;
+            pointer-events: none;
+            user-select: none;
+
+            .datemonth {
+                font-size: 1.3em;
+                font-weight: bold;
+            }
+    
+            .dateweek {
+                font-size: 0.9em;
+                font-weight: 500;
+            }
+        }
+
+    }
+
+    .separator {
+        height:.1em;
+        background-color: #E5E5E5;
+        width:80%;
+        margin: 1em 0;
+    }
+
+    .timeContainer {
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+
+        .times {
+            width:4.9em;
+        }
+
+        .icon{
+            width:1.6em;
+            height:1.6em;
+            margin-top: .5em;
+        }
+
+        .time {
+            margin-bottom:.8em;
+        }
+    }
+
+}

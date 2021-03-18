@@ -22,7 +22,7 @@ const Home =()=>{
                         <div className="sloganText">
                             <h2>¿Molestias dentales?<br/>
                             <span className="reacciona">¡Reacciona!</span> Ven a React Dent </h2>
-                            Regístrese y pida su primera cita gratis ahora.
+                            Regístrate y pide tu primera cita gratis ahora.
                             <div className="buttonContainer">
                                 <CTAButton text="Regístrate" goto="register"></CTAButton>
                             </div>
@@ -31,7 +31,7 @@ const Home =()=>{
                         </div>
                     </div>
                 </div>
-                <iframe className="gMap" style={{border:0}} loading="lazy"
+                <iframe className="gMap" style={{border:0}}
 src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJu25r3UxPYA0RUDakqjsJ16s&key=AIzaSyDGUWXjv7ggrWj32zIwAxOqZJIdH4x4lP8"></iframe>
              
                 <div className="descripcion">

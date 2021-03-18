@@ -8,13 +8,14 @@ import Message from '../../components/Message/Message';
 import Loading from '../../components/Loading/Loading';
 import Switch from '../../components/Switch/Switch';
 import {connect} from 'react-redux';
+import mapDentist from '../../tools/map-dentist'
 
 
 
 const Appointments = (props) => {
 
     let history = useHistory();
-    let credentials=props.credentials;
+    let credentials = props.credentials;
     //let credentials = JSON.parse(localStorage.getItem('credentials'));
 
     if(!credentials.user?.id) history.push('/login');
@@ -59,19 +60,6 @@ const Appointments = (props) => {
     const newMessage = (msg, style = 'error') => {
         const key = (~(Math.random()*999999999));
         setMessage([...message,<Message key={key} text={msg} style={style}></Message>]);
-    }
-
-    const mapDentist = (id) => {
-        switch (id) {
-            case 1:
-                return 'Dr. Iglesias Fornes David';
-            case 2:
-                return 'Dra. Flores Marín Lorena';
-            case 3:
-                return 'Dr. Zemmari Kissani Tarik';
-            case 4:
-                return 'Dra. Sanz Iglesias Noemi';
-        }
     }
 
     const cancelAppointment = (id) => {

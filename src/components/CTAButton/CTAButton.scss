@@ -20,7 +20,18 @@
     background-color: $pink-dark;
 }
 
-.alt {
+.time:hover {
+    background-color: $pink-dark;
+    color: #FFF;
+    border-color: #FFF;
+}
+
+.time {
+    padding: 0.3em 1.2em 0.4em 1.2em;
+    min-width: 4.9em;
+}
+
+.alt, .time {
     background-color: #FFF;
     color: #666;
     border: 1px solid $light-grey;
