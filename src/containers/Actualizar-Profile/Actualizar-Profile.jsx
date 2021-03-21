@@ -142,29 +142,29 @@ const ActualizarProfile = (props) => {
                    <div className="Actualizar">
                       <div className="inputContainer twocols">
                 <Form.Item validateStatus={errors.name?.status} help={errors.name?.help}>
-                    <FormInput label="Nombre" name="name" onChange={updateUser} />
+                    <FormInput value={credentials.user.name} label="Nombre" name="name" onChange={updateUser} />
                 </Form.Item>
                 <Form.Item validateStatus={errors.lastname?.status} help={errors.lastname?.help}>
-                    <FormInput label="Apellidos" name="lastname" onChange={updateUser} />
+                    <FormInput value={credentials.user.lastname} label="Apellidos" name="lastname" onChange={updateUser} />
                 </Form.Item>
             </div>
             <div className="inputContainer">
                 <Form.Item validateStatus={errors.address?.status} help={errors.address?.help}>
-                    <FormInput label="Dirección" name="address" onChange={updateUser} />
+                    <FormInput value={credentials.user.address} label="Dirección" name="address" onChange={updateUser} />
                 </Form.Item>
             </div>
             <div className="inputContainer twocols">
                 <Form.Item validateStatus={errors.phone?.status} help={errors.phone?.help}>
-                    <FormInput label="Telefono" name="phone" onChange={updateUser} />
+                    <FormInput value={credentials.user.phone} label="Telefono" name="phone" onChange={updateUser} />
                 </Form.Item>
                 <Form.Item validateStatus={errors.born?.status} help={errors.born?.help}>
-                    <FormInput label="Fecha de nacimiento" name="born" onChange={updateUser} />
+                    <FormInput value={credentials.user.born} label="Fecha de nacimiento" name="born" onChange={updateUser} />
                 </Form.Item>
             </div>
             <div className="inputContainer twocols">
               
                 <Form.Item validateStatus={errors.nif?.status} help={errors.nif?.help}>
-                    <FormInput label="Documento de identidad" name="nif" onChange={updateUser} />
+                    <FormInput value={credentials.user.nif}label="Documento de identidad" name="nif" onChange={updateUser} />
                 </Form.Item>
             </div>
                       <button className="boton" onClick={()=>{Actualizar()}}>Actualizar</button>

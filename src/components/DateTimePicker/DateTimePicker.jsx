@@ -17,6 +17,7 @@ const DateTimePicker = (props) => {
 
     const [page, setPage] = useState(0);
     const [nitems, setNitems] = useState(5);
+    console.log(props.dates)
 
     const loc = props.locale || 'es';
     const npages = (~~(props.dates.length / nitems));

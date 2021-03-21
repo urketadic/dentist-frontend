@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <br>Dental Clinic API REST
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4 align="center">Frontend for an appointment web app with React.</h4>
 
-## Available Scripts
+<br>
+<p align="center">
+  <a href="#about">About</a> •
+  <a href="#usage">Usage</a> •
+ 
+  <a href="#dependencies">Dependencies</a> •
+  <a href="#features">Features</a>
+</p>
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## About
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<table>
+<tr>
+<td>
+<br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Our application** is a website, where a user can register and get an account, with which he can access the option of choosing a dentist and making an appointment.
+We have used REACT as a rendering method.
+</br>
+</br>
 
-### `npm test`
+This project was created for educational purposes at <a href="https://geekshubsacademy.com/">GeeksHubs Academy</a>'s Full Stack Developer Bootcamp by Tarek Zemmari and Federico Báez in Valencia, Spain on 2021-3-02 to 2021-3-18.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+</td>
+</tr>
+</table>
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### <b>[Click here to download the back-end](https://github.com/T-zemmari/Dentist-appointment/tree/develop)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Alternatively, the project may be downloaded from <a href="https://github.com/T-zemmari/Dentist-appointment/archive/main.zip">this link</a>. You're welcome to borrow our code.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* To Start in frontend and backend :
+</br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  * npm i   (to install all dependecies)
+ * npm start  (to start)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+##  Trello
 
-### Analyzing the Bundle Size
+![Tareas hechas ](https://user-images.githubusercontent.com/76817211/110012463-d7ed2300-7d20-11eb-83d4-ae554e6c50b0.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+We have used Trello for the distribution and control of tasks using Kanban and to plan 
+the structure of the frontend, the views and the logic of our Website.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* react-router-dom(Routes,..)
+* redux and react -redux(
+improved localstorage alternative)
+* Axios (to fetsh backend data)
+* antd (for some design improvements of some components
+)
+ 
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
