@@ -71,6 +71,7 @@ const LeftMenu = (props) => {
             myappointments: '/admin/all-appointments',
             newappointment: '/admin/create-appointment'
         }
+        classes.newappointment += ' hidden';
     }
 
 

@@ -139,7 +139,7 @@ const Appointment = (props) => {
       content: 
       <>
       <div className="dentistDetails">
-        <div>Horarios disponibles de <span style={{fontWeight:500}}>{mapDentist(appointment.dentistId)}</span></div>
+        <div>Citas disponibles para <span style={{fontWeight:500}}>{mapDentist(appointment.dentistId)}</span></div>
         <div className="back" onClick={()=>{setCurrent(0)}}>Cambiar</div>
       </div>
       <DateTimePicker handler={setDate} dates={slots}/>

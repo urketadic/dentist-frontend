@@ -74,7 +74,17 @@ const Login = (props) => {
     }
     },[]);
 
-    
+    useEffect(() => {
+        const listener = event => {
+          if (event.code === "Enter" || event.code === "NumpadEnter") {
+            submit();
+          }
+        };
+        document.addEventListener("keydown", listener);
+        return () => {
+          document.removeEventListener("keydown", listener);
+        };
+    }, [credentials]);
 
     return (
         <>

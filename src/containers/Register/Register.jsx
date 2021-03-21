@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import validate from "../../tools/validate";
@@ -82,6 +82,18 @@ const Register = (props) => {
     const key = ~(Math.random() * 99999);
     setMessage([...message, <Message key={key} text={msg}></Message>]);
   };
+
+  useEffect(() => {
+    const listener = event => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        sendData();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, [user]);
 
   return (
     <>
