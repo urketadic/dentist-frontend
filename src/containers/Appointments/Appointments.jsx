@@ -9,6 +9,7 @@ import Loading from '../../components/Loading/Loading';
 import Switch from '../../components/Switch/Switch';
 import {connect} from 'react-redux';
 import mapDentist from '../../tools/map-dentist'
+import {DELETE_MESSAGE} from '../../redux/types'
 
 
 
@@ -76,6 +77,13 @@ const Appointments = (props) => {
         }
     }
 
+    useEffect(()=>{
+    if (props.queuedmessage.text) {
+        newMessage(props.queuedmessage.text,props.queuedmessage.type);
+        props.dispatch({type:DELETE_MESSAGE});
+    }
+    },[]);
+
     return (
         <>
         <Header></Header>
@@ -123,4 +131,4 @@ const Appointments = (props) => {
     )
 }
 
-export default connect((state)=>({credentials:state.credentials}))(Appointments);
+export default connect((state)=>({credentials:state.credentials,queuedmessage:state.message}))(Appointments);

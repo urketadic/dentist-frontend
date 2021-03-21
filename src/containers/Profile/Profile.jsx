@@ -57,7 +57,7 @@ const Profile = (props) => {
                       </div>
                       <div className="tres">
                           <div className="actualizarDatos">
-                              <div className="hoverUpdate" onClick={()=>{SwitshToActualizarPerfil()}}>Actualizar Mis Perfil</div> 
+                              <div className="hoverUpdate" onClick={()=>{SwitshToActualizarPerfil()}}>Actualizar Mi Perfil</div> 
                           </div>
                       </div>
    

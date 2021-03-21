@@ -11,18 +11,25 @@ import { QUEUE_MESSAGE } from "../../redux/types";
 import { Steps } from "antd";
 import "./Steps.css";
 import Message from '../../components/Message/Message';
+import Loading from '../../components/Loading/Loading';
 import DateTimePicker from "../../components/DateTimePicker/DateTimePicker";
+import { Input } from 'antd';
+import CTAButton from "../../components/CTAButton/CTAButton";
+
+const { TextArea } = Input;
 
 const { Step } = Steps;
 
+
 const Appointment = (props) => {
+
   let history = useHistory();
   let credentials = props.credentials;
   //let credentials = JSON.parse(localStorage.getItem('credentials'));
 
   if (!credentials.user?.id) history.push("/login");
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState([]);
   const [slots, setSlots] = useState([]);
   const [current, setCurrent] = useState(0);
@@ -31,14 +38,14 @@ const Appointment = (props) => {
     userId: credentials.user.id,
     dentistId: "",
     date: "",
-    comment: "",
+    comment: ""
   });
 
-  const fetchSlots = (query = "") => {
+  const fetchSlots = (dentistId) => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get(`http://localhost:3001/users/${credentials.user.id}/appointments/slots${query}`, { headers: { authorization: "Bearer " + credentials.token } })
+        .get(`http://localhost:3001/users/${credentials.user.id}/appointments/slots/${dentistId}`, { headers: { authorization: "Bearer " + credentials.token } })
         .then(handleSlotResponse)
         .catch((err) => {
           handleSlotResponse({ data: { message: "Error de conexión." } });
@@ -50,6 +57,7 @@ const Appointment = (props) => {
     if (response.status == 200) {
       setLoading(false);
       setSlots(response.data);
+      setCurrent(1);
     } else {
       setLoading(false);
       newMessage(response.data.message);
@@ -67,7 +75,7 @@ const Appointment = (props) => {
 
   const sendData = async () => {
     let userId = credentials.user.id;
-    console.log(userId);
+    
     let appointmentData = {
       dentistId: appointment.dentistId,
       date: appointment.date,
@@ -102,7 +110,7 @@ const Appointment = (props) => {
 
   const setDentist = (value) => {
     handler('dentistId',value);
-    setCurrent(1);
+    fetchSlots(value);
   }
 
   const setDate = (value) => {
@@ -110,20 +118,9 @@ const Appointment = (props) => {
     setCurrent(2);
   }
 
-  const dates = [
-    ['2021-03-18T08:00:00.000000','2021-03-18T10:00:00.000000'],
-    ['2021-03-19T08:00:00.000000','2021-03-19T10:00:00.000000'],
-    ['2021-03-20T08:00:00.000000','2021-03-20T10:00:00.000000'],
-    ['2021-03-21T08:00:00.000000','2021-03-21T10:00:00.000000'],
-    ['2021-03-22T08:00:00.000000','2021-03-22T10:00:00.000000'],
-    ['2021-03-23T08:00:00.000000','2021-03-23T10:00:00.000000'],
-    ['2021-03-24T08:00:00.000000','2021-03-24T10:00:00.000000'],
-    ['2021-03-25T08:00:00.000000','2021-03-25T10:00:00.000000'],
-    ['2021-03-26T08:00:00.000000','2021-03-26T10:00:00.000000','2021-03-26T17:00:00.000000'],
-    ['2021-03-27T08:00:00.000000','2021-03-27T10:00:00.000000'],
-    ['2021-03-28T08:00:00.000000','2021-03-28T10:00:00.000000'],
-    ['2021-03-29T08:00:00.000000','2021-03-29T10:00:00.000000']
-  ];
+  const date = new Date(appointment.date);
+  let dateString = `${date.toLocaleDateString('es-es',{weekday:'long', day:'numeric', month:'long', year:'numeric'})} a las ${date.toLocaleTimeString('es-es',{hour:'numeric', minute:'numeric'})}h`;
+  dateString = dateString.charAt(0).toUpperCase() + dateString.slice(1);
 
   const steps = [
     {
@@ -131,21 +128,43 @@ const Appointment = (props) => {
       content:
       <div className='selectPro'>
         <h3>¿Con qué profesional?</h3>
-        <div value="0" className="option" onClick={(e)=>{setDentist(e.target.value)}}>Asignar automáticamente<br/><small>(Más horarios disponibles)</small></div>
-        <div value="1" className="option" onClick={(e)=>{setDentist(e.target.value)}}>{mapDentist(1)}</div>
-        <div value="2" className="option" onClick={(e)=>{setDentist(e.target.value)}}>{mapDentist(2)}</div>
-        <div value="3" className="option" onClick={(e)=>{setDentist(e.target.value)}}>{mapDentist(3)}</div>
-        <div value="4" className="option" onClick={(e)=>{setDentist(e.target.value)}}>{mapDentist(4)}</div>
+        <div value="1" className="option" onClick={()=>{setDentist(1)}}>{mapDentist(1)}</div>
+        <div value="2" className="option" onClick={()=>{setDentist(2)}}>{mapDentist(2)}</div>
+        <div value="3" className="option" onClick={()=>{setDentist(3)}}>{mapDentist(3)}</div>
+        <div value="4" className="option" onClick={()=>{setDentist(4)}}>{mapDentist(4)}</div>
       </div>
-      ,
     },
     {
       title: "Horario",
-      content: <DateTimePicker handler={setDate} dates={dates}/>,
+      content: 
+      <>
+      <div className="dentistDetails">
+        <div>Horarios disponibles de <span style={{fontWeight:500}}>{mapDentist(appointment.dentistId)}</span></div>
+        <div className="back" onClick={()=>{setCurrent(0)}}>Cambiar</div>
+      </div>
+      <DateTimePicker handler={setDate} dates={slots}/>
+      </>
     },
     {
       title: "Confirmación",
-      content: "Last-content",
+      content:
+      <div className='confirm'>
+        <div className="appointmentDetails">
+          <div>
+            <div className="appointmentTitle">Día y hora de tu cita</div>
+            <div className="appointmentDate">{dateString}</div>
+          </div>
+          <div>
+            <div className="back" onClick={()=>{setCurrent(1)}}>Editar</div>
+          </div>
+        </div>
+        <div className="separator"></div>
+        <div className="appointmentTitle">Motivo de la consulta</div>
+        <TextArea placeholder='Escribe aquí el motivo de la consulta' onChange={(e)=>{handler('comment',e.target.value)}} rows={5}/>
+        <div className="buttonContainer">
+          <CTAButton onClick={sendData} text='Confirmar cita'/>
+        </div>
+      </div>
     },
   ];
 
@@ -170,7 +189,10 @@ const Appointment = (props) => {
                 <Step key={item.title} title={item.title} />
               ))}
             </Steps>
-            <div className="steps-content">{steps[current].content}</div>
+            <div className="steps-content">
+              <Loading visible={loading}></Loading>
+              {steps[current].content}
+              </div>
           </div>
         </div>
       </div>
