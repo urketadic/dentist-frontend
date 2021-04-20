@@ -1,8 +1,8 @@
 <h1 align="center">
-  <br>Dental Clinic Frontend in React.js
+  <br>Dental Clinic web app in React.js
 </h1>
 
-<h4 align="center">Frontend for an appointment web app with React.</h4>
+<h4 align="center">Appointment web app with React.</h4>
 
 <br>
 <p align="center">
