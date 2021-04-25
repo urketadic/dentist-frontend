@@ -13,7 +13,14 @@ import {connect} from 'react-redux';
 import {QUEUE_MESSAGE} from '../../redux/types';
 
 const Register = (props) => {
+
   let history = useHistory();
+    
+  const cred = props.credentials;
+  //localStorage.getItem('credentials');
+  if (cred.user?.id)
+  if (cred.user.admin) history.push('/admin')
+  else history.push('/profile');
 
   const [user, setUser] = useState({
     email: "",
@@ -151,4 +158,4 @@ const Register = (props) => {
   );
 };
 
-export default connect((state)=>({queuedmessage:state.message}))(Register);
+export default connect((state)=>({credentials: state.credentials,queuedmessage:state.message}))(Register);
