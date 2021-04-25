@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import CTAButton from '../../components/CTAButton/CTAButton';
 import Header from '../../components/Header/Header';
 import implante from '../../img/implante.png';
@@ -8,8 +8,14 @@ import protesis from '../../img/protesis.png';
 import endodoncia from '../../img/endodoncia.png';
 import Odontopediatria from '../../img/odontopediatria.png';
 import cirugia from '../../img/cirugia.png';
+import axios from "axios";
 
 const Home =()=>{
+
+    // Wake up backend
+    useEffect(()=>{
+        axios.get('https://reactdent-b.herokuapp.com/');
+    },[]);
 
     return(
         <div className='vistaHome'>
