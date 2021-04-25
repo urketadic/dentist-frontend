@@ -7,7 +7,6 @@ import Register from './containers/Register/Register';
 import Profile from './containers/Profile/Profile';
 import NewAppointment from './containers/New-appointment/New-appointment';
 import Appointments from './containers/Appointments/Appointments';
-import ActualizarProfile from './containers/Actualizar-Profile/Actualizar-Profile';
 import Admin from './containers/Admin/Admin';
 import AllAppointments from './containers/AllAppointments/AllAppointments';
 
@@ -27,11 +26,8 @@ function App() {
           <Route path='/profile' exact component ={Profile}/>
           <Route path='/profile/my-appointments' exact component={Appointments}/>
           <Route path='/profile/new-appointment' exact component={NewAppointment}/>
-          <Route path='/Actualizar-Profile' exact component={ActualizarProfile}/>
           <Route path='/admin' exact component ={Admin}/>
           <Route path='/admin/all-appointments' exact component ={AllAppointments}/>
-
-
          
           
         </Switch>

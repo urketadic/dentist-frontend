@@ -60,7 +60,7 @@ const Register = (props) => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .post("http://localhost:3001/users", userData)
+        .post("https://reactdent-b.herokuapp.com/users", userData)
         .then(handleResponse)
         .catch((err) => {
           handleResponse({ data: { message: "Error de conexión." } });

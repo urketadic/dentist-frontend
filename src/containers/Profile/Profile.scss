@@ -1,141 +1,145 @@
-
 .profileContainer {
-    flex: 0 1 auto;
-    display:flex;
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  overflow-y: auto;
+
+  .bienvenida {
+    text-align: start;
+    font-size: 1.8rem;
+    margin: 1.6rem 5rem;
+  }
+
+  .profile {
+    height: 100%;
+    flex: 1 1 auto;
+    background-color: #fbfbfb;
+    overflow-y: auto;
+    position: relative;
+  }
+  .cuerpo {
+    width: 100%;
+    //border: 0.2em solid violet;
+    display: flex;
     flex-direction: row;
-    height:100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  // Nombre del Cliente Email y Edad
 
-    .bienvenida {
-        text-align: start;
-        font-size: 1.8rem;
-        margin: 1.6rem 5rem;
-    }
-    
-    .profile {
-        height: 100%;
-        flex: 1 1 auto;
-        background-color: #fbfbfb;
-    }
-    .cuerpo{
-        width: 62.5em;
-        height: 26em;
-        //border: 0.2em solid violet;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    // Nombre del Cliente Email y Edad
+  .UserData {
+    position:relative;
+    padding:1.6em 2.4em;
+    min-height:22em;
+    background-color: #FFF;
+    //border:0.2em solid black;
+    display: flex;
+    flex-direction: column;
+    margin-bottom:2em;
+    width:25em;
+    max-width: 100%;
+  }
 
-    .UserData{
-        margin-left: 5em;
-        width: 25em;
-        height: 18em;
-        //border:0.2em solid black;
-        display: flex;
-        flex-direction: column;
+  .uno {
+    //   border:solid 0.2em blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 
+  // Avatar
+  .datosPersonalesUno {
+    margin-left: 2em;
+    margin-right: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    .datosPersonalesName {
+        font-weight:500;
+        margin: 0 0 .3rem 0;
+        text-align: left;
     }
-    .uno{
-       width: 25em;
-        height: 45%;
-     //   border:solid 0.2em blue;
-        display:flex;
-        flex-direction: row;
-     }
+
+    div {
+        margin: 0 0 .3rem 0;
+    }
+  }
+
+  //informacion de contacto Telefono y Direccion Del Cliente
+
+  .datosPersonalesDos {
+    text-align: left;
+    margin-top: 1.7em;
+    margin-left: .7em;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .datosPersonalesSection {
+        font-weight: 500;
+        margin-bottom: .8em;
+    }
+
+    div {
+        margin-bottom: .6em;
+    }
+  }
+  .tres {
+    position:absolute;
+    right:1.5em;
+    bottom: 1.5em;
+    color: #ff518f;
+    margin-top: 1em;
+  }
+  .actualizarDatos {
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .hoverUpdate:hover {
+    color: #d63e73;
+  }
+  .ContenedorCita {
+    min-height: 22em;
+    padding:1.6em 2.4em;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF;
+    margin-bottom:2em;
+  }
+  .FotoCalendario {
+    margin:1em .5em;
+    width: 18em;
+    max-width:100%;
+  }
+  .PideCita {
+    margin-top:1em;
+  }
+
   
+  header {
+    flex: 0 1 auto;
+  }
 
-     // Avatar
-     .avatar{
-         width: 10em;
-         height: 8em;
-     
-
-     }
-     .datosPersonalesUno{
-         margin-left: 2em;
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-         align-items: flex-start;
-         width: 15em;
-         height: 8em;
-     }
-     
-     .dos{
-        width: 25em;
-        height: 45%;
-       // border:solid 0.2em blue;
-    }
-
-    //informacion de contacto Telefono y Direccion Del Cliente
-
-    .datosPersonalesDos{
-        margin-top: 2em;
-        width: 15em;
-        height: 8em;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        
-     }
-    .tres{
-        width: 25em;
-        height: 10%;
-        color:#FF518F ;
-        display:flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        
-    }
-    .hoverUpdate:hover{
-       
-        color: blue;
+  @media (max-width: 450px) {
+      .uno {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        .datosPersonalesUno {
+            margin:0;
+            div, h2 {
+                width:100%;
+                text-align: center;
+            }
         }
-    .ContenedorCita{
-        margin-right: 5em;
-        width: 22em;
-        height: 18em;
-       
-        display: flex;
-        flex-direction: column;
-    }
-    .FotoCalendario{
-        margin-top: -3em;
-        width: 22em;
-        height: 18em;
-        background-image: url('../../img/pideTuCita.png');
-        background-size: contain;
-        background-position: center;
-    
-    }
-    .PideCita{
-        width: 22em;
-        height: 2em;
-   
-    }
-    .botonDos{
-        width: 8em;
-        height: 2.5em;
-        background-color: #FF518F;
-        color : rgb(255, 255, 255);
-        border:rgb(211, 204, 204);
-        border-radius: 2em;
-    }
-    .botonDos:hover{
-        color:rgb(30, 30, 180)
-    }
-    }
-    
-    .buttonContainer {
-        margin-bottom:2em;
-    }
-    
-    header {
-        flex: 0 1 auto;
-    }
+      }
+  }
 
+}
 

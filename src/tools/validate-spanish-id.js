@@ -44,6 +44,7 @@ export default function validateSpanishID(str) {
   };
 
   var validDNI = function( dni ) {
+    dni = dni.replace('-', '');
     var dni_letters = "TRWAGMYFPDXBNJZSQVHLCKE";
     var letter = dni_letters.charAt( parseInt( dni, 10 ) % 23 );
     

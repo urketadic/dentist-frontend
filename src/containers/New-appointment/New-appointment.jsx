@@ -45,7 +45,7 @@ const Appointment = (props) => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get(`http://localhost:3001/users/${credentials.user.id}/appointments/slots/${dentistId}`, { headers: { authorization: "Bearer " + credentials.token } })
+        .get(`https://reactdent-b.herokuapp.com/users/${credentials.user.id}/appointments/slots/${dentistId}`, { headers: { authorization: "Bearer " + credentials.token } })
         .then(handleSlotResponse)
         .catch((err) => {
           handleSlotResponse({ data: { message: "Error de conexión." } });
@@ -82,7 +82,7 @@ const Appointment = (props) => {
       comment: appointment.comment,
     };
 
-    let endpointAppointments = `http://localhost:3001/users/${userId}/appointments`;
+    let endpointAppointments = `https://reactdent-b.herokuapp.com/users/${userId}/appointments`;
 
     let token = credentials.token;
 

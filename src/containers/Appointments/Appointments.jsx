@@ -42,7 +42,7 @@ const Appointments = (props) => {
     const fetchAppointments = (query = '') => {
         setLoading(true);
         setTimeout(()=>{
-            axios.get(`http://localhost:3001/users/${credentials.user.id}/appointments${query}`,{headers:{'authorization':'Bearer ' + credentials.token}})
+            axios.get(`https://reactdent-b.herokuapp.com/users/${credentials.user.id}/appointments${query}`,{headers:{'authorization':'Bearer ' + credentials.token}})
             .then(handleResponse)
             .catch((err)=>{handleResponse({data:{message:'Error de conexión.'}})});
         },500);
@@ -68,8 +68,8 @@ const Appointments = (props) => {
         if (confirmed) {
             setLoading(true);
             setTimeout(()=>{
-                axios.delete(`http://localhost:3001/users/${credentials.user.id}/appointments/${id}`,{headers:{'authorization':'Bearer ' + credentials.token}})
-                .then(()=>axios.get(`http://localhost:3001/users/${credentials.user.id}/appointments`,{headers:{'authorization':'Bearer ' + credentials.token}}))
+                axios.delete(`https://reactdent-b.herokuapp.com/users/${credentials.user.id}/appointments/${id}`,{headers:{'authorization':'Bearer ' + credentials.token}})
+                .then(()=>axios.get(`https://reactdent-b.herokuapp.com/users/${credentials.user.id}/appointments`,{headers:{'authorization':'Bearer ' + credentials.token}}))
                 .then(handleResponse)
                 .then(()=>{newMessage('Cita cancelada con éxito','success')})
                 .catch((err)=>{handleResponse({data:{message:'Error de conexión.'}})});
