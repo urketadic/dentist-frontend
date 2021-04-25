@@ -7,7 +7,7 @@
 <br>
 <p align="center">
   <a href="#about">About</a> •
-  <a href="#usage">Usage</a> •
+  <a href="#usage">Demo</a> •
   <a href="#screenshots">Screenshots</a> •
   <a href="#dependencies">Dependencies</a>
 </p>
@@ -21,8 +21,9 @@
 <td>
 <br>
 
-**Our application** is a website where a user can register and get an account, with which he can access the option of choosing a dentist and making an appointment.
-We have used REACT to develop the app.
+**React Dent** is a web app for a fictitious dental clinic where a user can register, log in and make appointments with their dentist of choice. The user can view their appointments and cancel them. An admin user can view and cancel appointments for all registered users. The [app's back-end](https://github.com/fbgoode/reactdent-b) manages the available time slots of 5 dentists, allowing users to make appointments only when the selected dentist is available.
+
+We have used ReactJS with Redux and Sass to develop the app.
 </br>
 </br>
 
@@ -35,21 +36,23 @@ This project was created for educational purposes at <a href="https://geekshubsa
 </table>
 <br>
 
-## Usage
+## Demo
 
+### No installation required:
+The app is deployed in Heroku at <b>[reactdent.herokuapp.com](https://reactdent.herokuapp.com/)</b>.
 
+<b>IMPORTANT:</b> Please be patient after clicking the link above. The demo goes "asleep" when not viewed in the last 5 minutes. You may need to wait a minute for it to wake up, and you'll probably need to refresh the page.
 
-### <b>[Click here to download the back-end](https://github.com/T-zemmari/Dentist-appointment/archive/main.zip)</b>
+You can register a new user or log in with one of these:
 
-[(Backend repository)](https://github.com/T-zemmari/Dentist-appointment)
-
-### <b>[Click here to download the front-end](https://github.com/fbgoode/dentist-appointment-f/archive/main.zip)</b>
+Type | Email | Password
+--- | --- | ---
+user | roberto@robertez.com | password123
+admin | federico@federiquez.com | password123
 
 <br/>
-To Start front and backend (in both):
 
-* npm i   (to install all dependencies)
-* npm start  (to start development servers)
+Check out the [backend repository](https://github.com/fbgoode/reactdent-b).
 
 <br/>
 
@@ -73,7 +76,7 @@ Admin back-office with access to all appointments:
 
 User profile page with access to own appointments:
 
-![image](https://user-images.githubusercontent.com/77585960/111914174-34667700-8a71-11eb-8de2-eb87db7eeb1e.png)
+![image](https://user-images.githubusercontent.com/77585960/116004899-1c9c8880-a605-11eb-943b-0dc006dc8b29.png)
 ![image](https://user-images.githubusercontent.com/77585960/111913976-78a54780-8a70-11eb-919a-102dc2bd99b6.png)
 
 Responsive backoffice - mobile:

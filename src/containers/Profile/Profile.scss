@@ -19,7 +19,8 @@
     position: relative;
   }
   .cuerpo {
-    width: 100%;
+    width: 65em;
+    max-width: 100%;
     //border: 0.2em solid violet;
     display: flex;
     flex-direction: row;
