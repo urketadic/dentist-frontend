@@ -93,30 +93,30 @@ const Login = (props) => {
         <section className="loginContainer">
             {message}
             <div className="login">
-                <h2>¡Hola otra vez!</h2>
-                <p>Introduce tu email y tu contraseña para acceder al área de cliente y pedir cita.</p>
+                <h2>Pozdrav!</h2>
+                <p>Ukucajte vasu mejl i lozinku da bi pristupili klijentskom nalogu.</p>
                 <div className="inputContainer">
                     <Form.Item validateStatus={errors.email?.status} help={errors.email?.help}>
-                        <FormInput label="Correo Electrónico" name="email" onChange={updateCredentials} maxLength="50"></FormInput>
+                        <FormInput label="Email" name="email" onChange={updateCredentials} maxLength="50"></FormInput>
                     </Form.Item>
                 </div>
                 <div className="inputContainer">
                     <Form.Item validateStatus={errors.password?.status} help={errors.password?.help}>
-                        <FormInput type="Password" label="Contraseña" name="password" onChange={updateCredentials} maxLength="99"></FormInput>
+                        <FormInput type="Password" label="Lozinka" name="password" onChange={updateCredentials} maxLength="99"></FormInput>
                     </Form.Item>
                 </div>
                 <div className="buttonContainer">
-                    <CTAButton goto="login" text="Acceder" styling="CTA" onClick={()=>submit()}/>
+                    <CTAButton goto="login" text="Pristup" styling="CTA" onClick={()=>submit()}/>
                 </div>
             </div>
             <div className="separator">
                 
             </div>
             <div className="register">
-                <h3>¿Aún no nos conoces?</h3>
-                <p>En React Dent contamos con los mejores odontólogos generales y especialistas en Valencia, comprometidos a dar el mejor cuidado a tu salud dental.</p>
+                <h3>Niste registrovani?</h3>
+                <p>Registracijom dobijate pregled svih termina koje ste imali sa nama kao i lakše automatizovano online zakazivanje budućih termina.</p>
                 <div className="buttonContainer">
-                    <CTAButton goto="register" text="Regístrate" styling="alt"/>
+                    <CTAButton goto="register" text="Registracija" styling="alt"/>
                 </div>
             </div>
         </section>

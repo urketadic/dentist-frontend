@@ -109,48 +109,48 @@ const Register = (props) => {
       <div className="registerContainer">
         {message}
         <div className="registerForm">
-            <h2>Regístrate gratis en React Dent</h2>
-            <p>Crea tu cuenta ahora y pide cita para disfrutar de la mejor atención odontológica en Valencia.</p>
+            <h2>Forma za registraciju</h2>
+            <p>Kreiranje naloga omogućava pregled postojećih termina i automatizovano zakazivanje novih bez potrebe da nas zovete.</p>
 
             <div className="inputContainer twocols">
                 <Form.Item validateStatus={errors.name?.status} help={errors.name?.help}>
-                    <FormInput label="Nombre" name="name" onChange={updateUser} />
+                    <FormInput label="Ime" name="name" onChange={updateUser} />
                 </Form.Item>
                 <Form.Item validateStatus={errors.lastname?.status} help={errors.lastname?.help}>
-                    <FormInput label="Apellidos" name="lastname" onChange={updateUser} />
+                    <FormInput label="Prezime" name="lastname" onChange={updateUser} />
                 </Form.Item>
             </div>
             <div className="inputContainer">
                 <Form.Item validateStatus={errors.address?.status} help={errors.address?.help}>
-                    <FormInput label="Dirección" name="address" onChange={updateUser} />
+                    <FormInput label="Adresa" name="address" onChange={updateUser} />
                 </Form.Item>
             </div>
             <div className="inputContainer twocols">
                 <Form.Item validateStatus={errors.phone?.status} help={errors.phone?.help}>
-                    <FormInput label="Telefono" name="phone" onChange={updateUser} />
+                    <FormInput label="Telefon" name="phone" onChange={updateUser} />
                 </Form.Item>
                 <Form.Item validateStatus={errors.born?.status} help={errors.born?.help}>
-                    <FormInput label="Fecha de nacimiento" name="born" onChange={updateUser} />
+                    <FormInput label="Datum Rodjenja" name="born" onChange={updateUser} />
                 </Form.Item>
             </div>
             <div className="inputContainer twocols">
                 <Form.Item validateStatus={errors.email?.status} help={errors.email?.help}>
-                    <FormInput label="Correo Electrónico" name="email" onChange={updateUser}/>
+                    <FormInput label="Email" name="email" onChange={updateUser}/>
                 </Form.Item>
                 <Form.Item validateStatus={errors.nif?.status} help={errors.nif?.help}>
-                    <FormInput label="Documento de identidad" name="nif" onChange={updateUser} />
+                    <FormInput label="Identifikacioni dokument" name="nif" onChange={updateUser} />
                 </Form.Item>
             </div>
             <div className="inputContainer twocols">
                 <Form.Item validateStatus={errors.password?.status} help={errors.password?.help}>
-                    <FormInput type="Password" label="Contraseña" name="password" onChange={updateUser} />
+                    <FormInput type="Password" label="Lozinka" name="password" onChange={updateUser} />
                 </Form.Item>
                 <Form.Item validateStatus={errors.passwordValidation?.status} help={errors.passwordValidation?.help}>
-                    <FormInput type="Password" label="Repita la Contraseña" name="passwordValidation" onChange={updateUser} />
+                    <FormInput type="Password" label="Potvrdite lozinku" name="passwordValidation" onChange={updateUser} />
                 </Form.Item>
             </div>
             <div className="buttonContainer">
-                <CTAButton text="Enviar" onClick={() => sendData()}/>
+                <CTAButton text="Posalji" onClick={() => sendData()}/>
             </div>
         </div>
       </div>

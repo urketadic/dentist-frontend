@@ -10,16 +10,28 @@ const CTAButton = (props) => {
     const styling = 'CTAButton ' + (props.styling || 'CTA');
 
     const route = () => {
-        history.push(`/${props.goto}`);
+        if (props.goto == false) {
+            return 
+        } else 
+        {
+         history.push(`/${props.goto}`);
+
+        }
     }
 
     let onClick = () => route();
     if (props.onClick) onClick = props.onClick;
 
+    let returned = props.phone ? <a href="tel:+381606872411">
+    <button onClick={onClick} className={styling} style={props.style}>
+        {props.text}
+    </button>
+    </a> :         <button onClick={onClick} className={styling} style={props.style}>
+    {props.text}
+</button>
+
     return(
-        <button onClick={onClick} className={styling}>
-            {props.text}
-        </button>
+        returned
     )
 }
 

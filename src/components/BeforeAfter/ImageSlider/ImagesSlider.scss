@@ -1,0 +1,11 @@
+.bamain {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 2em;
+}
+
+.label__right {
+    top: 5%;
+}
