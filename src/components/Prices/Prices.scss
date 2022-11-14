@@ -1,0 +1,54 @@
+.pricelist {
+    text-align: justify;
+}
+
+.priceheader {
+    margin-top: 1em;
+}
+
+table {
+    width:100%;
+    padding: 20%;
+    padding-top: 0;
+    padding-bottom: 2em;
+  }
+
+th {
+      font-size: 1.1em;
+  }
+
+
+  td {
+      padding: 0.5em;
+      font-size: 1em;
+  }
+
+  tbody tr:nth-child(odd){
+    background-color: #da5684ec;
+    color: #fff;
+  }
+
+  input {
+    letter-spacing: -0.2px;
+    font-size: 30px;
+    border: 1px solid #C1C1C1;
+    color: black;
+    padding: 14px 19px;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: #FF0080;
+    box-shadow: 0 0 0 5px rgba(255, 0, 128, 0.40);
+  }
+  
+
+  input:hover {
+    border-color: #AAAAAA;
+  }
+
+.error {
+    margin: 0px auto;
+    text-align:center;
+    font-size: 1.1em;
+}

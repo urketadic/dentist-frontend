@@ -5,7 +5,30 @@ const Footer = (props) => {
 
 
     let today = new Date();
+    let day = today.getDay();
     let hour = today.getHours();
+
+    const result = () => {
+        if ( day >= 1 && day < 6) {
+            if (hour >= 9 && hour < 17) {
+                return <p> Danas smo <span style={{color:"green"}}> otvoreni </span> do 17h. </p>
+            }
+        }
+
+        if (day == 6) {
+            if (hour >=9 && hour < 14) {
+                return <p> Danas smo <span style={{color:"green"}}> otvoreni </span> do 14h.</p>
+            }
+        }
+
+        if (day == 7) {
+            return <p> Nedeljom smo <span style={{color:"red"}}> zatvoreni </span> </p>
+        }
+
+        else {
+            return <p> Trenutno smo <span style={{color:"red"}}> zatvoreni </span></p>
+        }
+    }
 
     return (
         <footer className='Footer'>
@@ -15,10 +38,11 @@ const Footer = (props) => {
                 <div className="workinghours">
                     <h3>Radno vreme</h3> 
 
-                    <p> Trenutno smo {hour >=8 && hour < 20 ? <span style={{color:"green"}}>otvoreni</span> : <span style={{color:"red"}}>zatvoreni</span>}</p>
+                    {result()}
 
                     <div style={{textAlign:"justify"}}>
-                        <p style={{margin: '0px'}}>Otvoreno od 08h do 20h</p>
+                        <p style={{margin: '0px'}}>Radni dani:  09h do 17h</p>
+                        <p style={{margin: '0px'}}>Subota: 09h do 14h</p>
                     </div>
                 </div>
 
@@ -29,7 +53,7 @@ const Footer = (props) => {
 
                     <div>
                         <div style={{textAlign:"justify"}}>
-                            <p style={{margin: '0px'}}>TELEFON: <a href="tel:+381606872411">060 687 2411</a></p>
+                            <p style={{margin: '0px'}}>TELEFON: <a href="tel:+381656360334">065 636 0334</a></p>
                             <p style={{margin: '0'}}>E-MAIL: <a href="mailto:dr.vanja.stepanovic@gmail.com">dr.vanja.stepanovic@gmail.com</a></p>
                             <p style={{marginTop: '0'}}>LIVE CHAT: 💬 u donjem desnom uglu sajta</p>
                        

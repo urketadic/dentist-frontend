@@ -27,7 +27,7 @@ const Header = (props)=>{
     let left;
     let logoClasses = 'logo';
     if (props.home === 'true') {
-        right = <CTAButton goto="login" text="Login" styling="CTA"/>;
+        // right = <CTAButton goto="login" text="Login" styling="CTA"/>;
         logoClasses = 'logo collapse';
     } else {
         left = <div className="menu" onClick={()=>{showMenu();}}><div></div><div></div><div></div></div>
@@ -50,6 +50,7 @@ const Header = (props)=>{
                 </div>
 
                 {right}
+                <CTAButton text="Cenovnik" goto="cenovnik"></CTAButton>
             
             </div>
         </header>

@@ -11,6 +11,11 @@
     transition: background-color .3s ease;
 }
 
+.disabled {
+    background-color: gray !important;
+    cursor: not-allowed;
+}
+
 .CTA {
     background-color: $pink;
     color: #FFF;

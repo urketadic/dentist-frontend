@@ -150,6 +150,7 @@ const Register = (props) => {
                 </Form.Item>
             </div>
             <div className="buttonContainer">
+                <CTAButton goto="login" text="Već imam nalog" styling="CTA" />
                 <CTAButton text="Posalji" onClick={() => sendData()}/>
             </div>
         </div>

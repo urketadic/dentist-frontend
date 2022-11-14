@@ -26,8 +26,9 @@ const Home =()=>{
                             <span className="reacciona">Savršenstvo</span>  je naš standard. </h2>
                             Pozovite nas ili zakažite termin onlajn.
                             <div className="buttonContainer">
-                                <CTAButton text="060 687 2411" phone={true} goto={false} style={{marginRight: '0.5em'}}></CTAButton>
-                                <CTAButton text="Onlajn zakazivanje" goto="register"></CTAButton>
+                                <CTAButton text="065 687 0334" phone={true} goto={false} style={{marginRight: '0.5em'}}></CTAButton>
+                                <CTAButton text="Onlajn Chat" chat={true} goto={false} style={{marginRight: '0.5em'}}></CTAButton>
+                                <CTAButton text="Profil (uskoro)" disabled={true} goto={false}></CTAButton>
                             </div>
                         </div>
                         <div className="dentist">
@@ -91,17 +92,18 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1691.1739379909784!2d
                                 <div className="especialidad">
                                     <img src={Odontopediatria} alt=""/>
                                 </div>
-                                <h3>Pedijatrijska stomatologija</h3>
+                                <h3>Dečija stomatologija</h3>
                                 <p>Oblast stomatologije koja je zadužena za oralnu negu dece od rođenja do 16 godina.</p>
                             </div>
                         </div>
                     </div>
-                    <CTAButton text="Cenovnik" goto="cenovnik"></CTAButton>
+ 
                 </div>
                 <div className="vistaClinica"></div>
             </main>
 
-        <Footer/>
+            <Footer />
+
         </div>
     )
 }
