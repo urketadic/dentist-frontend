@@ -58,9 +58,9 @@ const Footer = (props) => {
                             <p style={{marginTop: '0'}}>LIVE CHAT: 💬 u donjem desnom uglu sajta</p>
                        
 
-                        <p><a href='https://www.instagram.com/dr.vanja.ljubinkovic/' target="_blank"><i className="fa-brands fa-facebook"></i> </a>   <a href='https://www.facebook.com/dr.vanja.stepanovic' target="_blank"><i className="fa-brands fa-square-instagram"></i> </a>  
+                        <p><a href='https://www.facebook.com/dr.vanja.stepanovic' target="_blank"><i className="fa-brands fa-facebook"></i> </a>   <a href='https://www.instagram.com/dr.vanja.ljubinkovic/' target="_blank"><i className="fa-brands fa-square-instagram"></i> </a>  
                         <a href='https://www.youtube.com/channel/UCwzZo7LiUC9KivMKc-VgBQg/featured' target="_blank"><i className="fa-brands fa-youtube"></i> </a> </p>
-
+                        
                         </div>
                         
                     </div>

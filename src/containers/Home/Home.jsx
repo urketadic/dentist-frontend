@@ -22,7 +22,7 @@ const Home =()=>{
                 <div className="sloganContainer">
                     <div className="slogan">
                         <div className="sloganText">
-                            <h2>¿Treba vam zubar?<br/>
+                            <h2>Treba vam zubar?<br/>
                             <span className="reacciona">Savršenstvo</span>  je naš standard. </h2>
                             Pozovite nas ili zakažite termin onlajn.
                             <div className="buttonContainer">
@@ -36,7 +36,8 @@ const Home =()=>{
                     </div>
                 </div>
                 <iframe className="gMap" style={{border:0}}
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1691.1739379909784!2d19.22257906968555!3d44.53145123339046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb5f5e79e5e563bc5!2sTr%C5%BEni%20centar%20Vo%C4%87ar%20City!5e0!3m2!1sen!2sde!4v1663258322221!5m2!1sen!2sde"></iframe>
+src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d845.5863983264421!2d19.22241007222942!3d44.53149053876247!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x445d03510ef75485!2sZubar%20Loznica%20-%20Stomatolo%C5%A1ka%20Ordinacija%20Dr%20Vanja!5e0!3m2!1sen!2sde!4v1674406315220!5m2!1sen!2sde"></iframe>
+
              
                 <div className="descripcion">
                 <h2>PRE I POSLE</h2>
