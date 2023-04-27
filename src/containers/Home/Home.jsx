@@ -10,8 +10,11 @@ import endodoncia from '../../img/endodoncia.png';
 import Odontopediatria from '../../img/odontopediatria.png';
 import cirugia from '../../img/cirugia.png';
 import BeforeAfter from '../../components/BeforeAfter/BeforeAfter';
+import { useTranslation } from "react-i18next";
 
 const Home =()=>{
+
+    const { t, i18n } = useTranslation();
 
     return(
         <div className='vistaHome'>
@@ -22,13 +25,13 @@ const Home =()=>{
                 <div className="sloganContainer">
                     <div className="slogan">
                         <div className="sloganText">
-                            <h2>Treba vam zubar?<br/>
-                            <span className="reacciona">Savršenstvo</span>  je naš standard. </h2>
-                            Pozovite nas ili zakažite termin onlajn.
+                            <h2>{t("question")}<br/>
+                            <span className="reacciona">{t("perfection")}</span>  {t("standard")} </h2>
+                            {t("callus")}
                             <div className="buttonContainer">
                                 <CTAButton text="065 687 0334" phone={true} goto={false} style={{marginRight: '0.5em'}}></CTAButton>
-                                <CTAButton text="Onlajn Chat" chat={true} goto={false} style={{marginRight: '0.5em'}}></CTAButton>
-                                <CTAButton text="Profil (uskoro)" disabled={true} goto={false}></CTAButton>
+                                <CTAButton text= {t("onlinechat")} chat={true} goto={false} style={{marginRight: '0.5em'}}></CTAButton>
+                                <CTAButton text={t("profile")} disabled={true} goto={false}></CTAButton>
                             </div>
                         </div>
                         <div className="dentist">
@@ -40,61 +43,61 @@ src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d845.5863983264421!2d19
 
              
                 <div className="descripcion">
-                <h2>PRE I POSLE</h2>
-                    <p className="emphasys">Imamo tim najboljih specijalista i opreme sa najnovijom tehnologijom. Ispod možete videti pre i posle slike nekih naših pacijenata.</p>
+                <h2>{t("bna")}</h2>
+                    <p className="emphasys">{t("bnatext")}.</p>
                     <BeforeAfter />
-                    <p>Za vise slika možete posetiti <a href='https://www.instagram.com/dr.vanja.ljubinkovic'>Instagram</a> ili <a href='https://www.facebook.com/dr.vanja.stepanovic'>Facebook</a> </p>
+                    <p>{t("formore")}<a href='https://www.instagram.com/dr.vanja.ljubinkovic'>Instagram</a> {t("or")} <a href='https://www.facebook.com/dr.vanja.stepanovic'>Facebook</a> </p>
 
                     <div className="separator"></div>
                     <div className="tratamientos">
 
-                        <h2 style={{textAlign: 'center'}}>SERVISI</h2>
-                        <p className="emphasys">Konsultacije su besplatne, za bilo kakvo pitanje možete nam poslati poruku u donjem desnom uglu ili nas pozvati.</p>
+                        <h2 style={{textAlign: 'center'}}>{t("services")}</h2>
+                        <p className="emphasys">{t("consultation")}.</p>
                         <br></br>
                         <div className="coleccionespecialidades">
                             <div className='vistaDivEspecialidades'>
                                 <div className= "especialidad">
                                 <img src={implante} />
                                 </div>
-                                <h3>Implanti</h3>
-                                <p>Zubni implant je titanijumski koren koji se postavlja kao oslonac za zamenu zuba koji je pacijent izgubio.</p>
+                                <h3>{t("implants")}</h3>
+                                <p>{t("implantstext")}.</p>
                                 
                             </div>
                             <div className='vistaDivEspecialidades'>
                                 <div className="especialidad">
                                 <img src={protesis} />
                                 </div>
-                                <h3>Proteze</h3>
-                                <p>Zubne proteze su lažni zubi koji zamenjuju prirodne zube. Mogu da zamene jedan ili više zuba.</p>
+                                <h3>{t("proteze")}</h3>
+                                <p>{t("protezetext")}.</p>
 
                             </div>
                             <div className='vistaDivEspecialidades'>
                                 <div className="especialidad">
                                     <img src={endodoncia} />
                                 </div>
-                                <h3>Endodoncija</h3>
-                                <p>Neophodan tretman kada pacijent ima infekciju ili ireverzibilni pulpitis zuba.</p>
+                                <h3>{t("endodoncija")}</h3>
+                                <p>{t("endodoncijatext")}</p>
                             </div>
                             <div className='vistaDivEspecialidades'>
                                 <div className="especialidad">
                                 <img src={ortodoncia} />
                                 </div>
-                                <h3>Ortodoncija</h3>
-                                <p>Oblast stomatologije koja ispravlja nepravilan položaj zuba kako bi se postavili na svoje pravo mesto.</p>
+                                <h3>{t("ortodoncija")}</h3>
+                                <p>{t("ortodoncijatext")}.</p>
                             </div>
                             <div className='vistaDivEspecialidades'>
                                 <div className="especialidad">
                                 <img src={cirugia} />
                                 </div>
-                                <h3>Oralna hirurgija</h3>
-                                <p>Dijagnoza, prevencija i ponekad lečenje oralnih patologija..</p>
+                                <h3>{t("oralnahirurgija")}</h3>
+                                <p>{t("oralnahirurgijatext")}</p>
                             </div>
                             <div className='vistaDivEspecialidades'>
                                 <div className="especialidad">
                                     <img src={Odontopediatria} alt=""/>
                                 </div>
-                                <h3>Dečija stomatologija</h3>
-                                <p>Oblast stomatologije koja je zadužena za oralnu negu dece od rođenja do 16 godina.</p>
+                                <h3>{t("decijastomatologija")}</h3>
+                                <p>{t("decijastomatologijatext")}</p>
                             </div>
                         </div>
                     </div>

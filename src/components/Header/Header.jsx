@@ -4,15 +4,28 @@ import Avatar from '../Avatar/Avatar';
 import {useHistory} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {OPEN_MENU} from '../../redux/types';
-
+import { useTranslation } from "react-i18next";
+import rsFlag from './RS.png';
+import gbFlag from './GB.png';
 
 
 const Header = (props)=>{
 
+    const { t, i18n } = useTranslation();
     let history = useHistory();
     let credentials =props.credentials;
 
+
    // let credentials = JSON.parse(localStorage.getItem('credentials'));
+
+   const switchLanguage = () => {
+    const newLang = i18n.language === "rs" ? "en" : "rs";
+    i18n.changeLanguage(newLang);
+  };
+
+  const isSelected = (lang) => {
+    return i18n.language === lang;
+  };
 
 
     const goHome = () => {
@@ -50,8 +63,24 @@ const Header = (props)=>{
                 </div>
 
                 {right}
-                <CTAButton text="Cenovnik" goto="cenovnik"></CTAButton>
-            
+                <CTAButton text={t("cenovnik")} goto="cenovnik"></CTAButton>
+
+
+                <div className="language-switcher">
+                    <button
+                    className={isSelected("rs") ? "selected" : ""}
+                    onClick={() => switchLanguage("rs")}
+                    >
+                    <img src={rsFlag} alt="RS Flag" /> RS
+                    </button>
+                    <button
+                    className={isSelected("en") ? "selected" : ""}
+                    onClick={() => switchLanguage("en")}
+                    >
+                    <img src={gbFlag} alt="GBFlag" /> EN
+                    </button>
+                </div>
+
             </div>
         </header>
     )

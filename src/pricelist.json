@@ -1,0 +1,621 @@
+{
+  "en": {
+    "prices": [
+        {
+            "code": 1,
+            "description": "Tooth extraction",
+            "price": 20
+          },
+          {
+            "code": 2,
+            "description": "Complicated tooth extraction",
+            "price": 40
+          },
+          {
+            "code": 3,
+            "description": "Removal of soft and hard plaque with polishing (teeth cleaning)",
+            "price": 30
+          },
+          {
+            "code": 4,
+            "description": "Polishing and sandblasting",
+            "price": 20
+          },
+          {
+            "code": 5,
+            "description": "Periodontal pocket treatment",
+            "price": 20
+          },
+          {
+            "code": 6,
+            "description": "Helbo laser (both jaw)",
+            "price": 210
+          },
+          {
+            "code": 7,
+            "description": "Frenectomy (lip ligament removal)",
+            "price": 100
+          },
+          {
+            "code": 8,
+            "description": "Composite filling on 1 or 2 surfaces",
+            "price": 25
+          },
+          {
+            "code": 9,
+            "description": "Composite filling on 3 surfaces",
+            "price": 30
+          },
+          {
+            "code": 10,
+            "description": "Composite reconstruction",
+            "price": 40
+          },
+          {
+            "code": 11,
+            "description": "Vital or gangrenous expiration",
+            "price": 20
+          },
+          {
+            "code": 12,
+            "description": "Local medicament application (root canal)",
+            "price": 10
+          },
+          {
+            "code": 13,
+            "description": "Retention splint",
+            "price": 70
+          },
+          {
+            "code": 14,
+            "description": "Metal ceramic crown (temporary)",
+            "price": 110
+          },
+          {
+            "code": 15,
+            "description": "Ceramic crown I (zirconium)",
+            "price": 300
+          },
+          {
+            "code": 16,
+            "description": "Ceramic crown II (zirconium)",
+            "price": 250
+          },
+          {
+            "code": 17,
+            "description": "Fiberglass peg (composite reconstruction)",
+            "price": 70
+          },
+          {
+            "code": 18,
+            "description": "Partial acrylic denture per jaw",
+            "price": 200
+          },
+          {
+            "code": 19,
+            "description": "Total acrylic denture per jaw",
+            "price": 200
+          },
+          {
+            "code": 20,
+            "description": "Metal- based denture per jaw",
+            "price": 350
+          },
+          {
+            "code": 21,
+            "description": "Attachments",
+            "price": 30
+          },
+          {
+            "code": 22,
+            "description": "Silicone denture",
+            "price": 350
+          },
+          {
+            "code": 23,
+            "description": "Reparation of denture",
+            "price": 30
+          },
+          {
+            "code": 24,
+            "description": "Denture relining",
+            "price": 60
+          },
+          {
+            "code": 25,
+            "description": "Laser Teeth whitening",
+            "price": 200
+          },
+          {
+            "code": 26,
+            "description": "Home teeth whitening",
+            "price": 200
+          },
+          {
+            "code": 27,
+            "description": "Direct composite veneer",
+            "price": 50
+          },
+          {
+            "code": 28,
+            "description": "Teeth cleaning (soft plaque)",
+            "price": 10
+          },
+          {
+            "code": 29,
+            "description": "Milk teeth extraction",
+            "price": 10
+          },
+          {
+            "code": 30,
+            "description": "Fixed unit with conventional metal brackets, per jaw",
+            "price": 600
+          },
+              {
+            "code": 31,
+            "description": "Fixed unit with covnetional aesthetic brackets, per jaw",
+            "price": 800
+          },
+          {
+            "code": 32,
+            "description": "Active mobile unit per jaw",
+            "price": 600
+          },
+          {
+            "code": 33,
+            "description": "Twin block appliance",
+            "price": 600
+          },
+          {
+            "code": 34,
+            "description": "Fissure sealing",
+            "price": 15
+          },
+          {
+            "code": 35,
+            "description": "Local medicament aplication",
+            "price": 20
+          },
+          {
+            "code": 36,
+            "description": "Composite filling milk teeth",
+            "price": 15
+          },
+          {
+            "code": 37,
+            "description": "Dental jewelry",
+            "price": 40
+          },
+          {
+            "code": 38,
+            "description": "Straumann implant",
+            "price": 700
+          },
+          {
+            "code": 39,
+            "description": "Bredent implant",
+            "price": 600
+          },
+          {
+            "code": 40,
+            "description": "Mis implant",
+            "price": 600
+          },
+          {
+            "code": 41,
+            "description": "Metal ceramic crown on implant",
+            "price": 250
+          },
+          {
+            "code": 42,
+            "description": "Ceramic crown on implant",
+            "price": 350
+          },
+          {
+            "code": 43,
+            "description": "Ceramic veneer",
+            "price": 350
+          },
+          {
+            "code": 44,
+            "description": "Metal based denture on bar(implant system)",
+            "price": 2400
+          },
+          {
+            "code": 45,
+            "description": "Metal based denture BioHpp on implants",
+            "price": 3000
+          },
+          {
+            "code": 46,
+            "description": "Temporary crowns on implants Screw-BioHpp-Zirconium",
+            "price": 4000
+          },
+          {
+            "code": 47,
+            "description": "Temporary crowns on implants Screw-Zirconium-BioHpp-Zirconium",
+            "price": 3500
+          },
+          {
+            "code": 48,
+            "description": "Metal based denture with 2 locator abutments on implant",
+            "price": 1400
+          },
+          {
+            "code": 49,
+            "description": "BioHpp denture( 2 locator abutments on implant)",
+            "price": 2000
+          },
+          {
+            "code": 50,
+            "description": "MWF surgery per tooth",
+            "price": 50
+          },
+          {
+            "code": 51,
+            "description": "Bone substitute material BioOss",
+            "price": 180
+          },
+          {
+            "code": 52,
+            "description": "Augmentation procedure",
+            "price": 100
+          },
+          {
+            "code": 53,
+            "rs": "Kolagena membrana",
+            "description": "Collagen membrane",
+            "price": 300
+          },
+          {
+            "code": 54,
+            "description": "Fornix reshaping",
+            "price": 150
+          },
+          {
+            "code": 55,
+            "description": "Alveolar ridge leveling",
+            "price": 150
+          },
+          {
+            "code": 56,
+            "description": "Surgical extraction of impacted tooth",
+            "price": 150
+          },
+          {
+            "code": 57,
+            "description": "Apicoectomy",
+            "price": 150
+          },
+          {
+              "code": 58,
+              "description": "Sinus floor elevation + material",
+              "price": 800
+            },
+            {
+              "code": 59,
+              "description": "All on 4 implant system (metal ceramic crown)",
+              "price": 4500
+            },
+            {
+              "code": 60,
+              "description": "All on 6 implant system (metal ceramic crown)",
+              "price": 6500
+            },
+            {
+              "code": 61,
+              "description": "Cystetomy",
+              "price": 200
+            }
+    ]
+  },
+  "rs": {
+    "prices": [
+        {
+            "code": 1,
+            "description": "Vadjenje zuba",
+            "price": 20
+          },
+          {
+            "code": 2,
+            "description": "Komplikovano vadjenje zuba",
+            "price": 40
+          },
+          {
+            "code": 3,
+            "description": "Ukl.kamenca ultr.",
+            "price": 30
+          },
+          {
+            "code": 4,
+            "description": "Polir.peskarenje",
+            "price": 20
+          },
+          {
+            "code": 5,
+            "description": "Obr.parad.dzepa",
+            "price": 20
+          },
+          {
+            "code": 6,
+            "description": "Helbo laser",
+            "price": 210
+          },
+          {
+            "code": 7,
+            "description": "Frenulum",
+            "price": 100
+          },
+          {
+            "code": 8,
+            "description": "Kompozirtni ispun",
+            "price": 25
+          },
+          {
+            "code": 9,
+            "description": "Kompozirtni ispun m.o.d",
+            "price": 30
+          },
+          {
+            "code": 10,
+            "description": "Kompozitna rekonstrukcija",
+            "price": 40
+          },
+          {
+            "code": 11,
+            "description": "Vitalna ili mortalna ekstirpacija",
+            "price": 20
+          },
+          {
+            "code": 12,
+            "description": "Lokalna aplikacija leka",
+            "price": 10
+          },
+          {
+            "code": 13,
+            "description": "Okluzalni splint",
+            "price": 70
+          },
+          {
+            "code": 14,
+            "description": "Metalo-keramicka kruna",
+            "price": 110
+          },
+          {
+            "code": 15,
+            "description": "Bezmetalna keramicka kruna I",
+            "price": 300
+          },
+          {
+            "code": 16,
+            "description": "Bezmetalna keramicka kruna II",
+            "price": 250
+          },
+          {
+            "code": 17,
+            "description": "Fiber kocic sa nadogradnjom",
+            "price": 70
+          },
+          {
+            "code": 18,
+            "description": "parcijalna plocasta proteza",
+            "price": 200
+          },
+          {
+            "code": 19,
+            "description": "Totalna plocasta proteza",
+            "price": 200
+          },
+          {
+            "code": 20,
+            "description": "Skeletirana proteza",
+            "price": 350
+          },
+          {
+            "code": 21,
+            "description": "Atecmeni",
+            "price": 30
+          },
+          {
+            "code": 22,
+            "description": "Defleks proteza",
+            "price": 350
+          },
+          {
+            "code": 23,
+            "description": "Repatura polomljene proteze",
+            "price": 30
+          },
+          {
+            "code": 24,
+            "description": "Podlaganje proteze",
+            "price": 60
+          },
+          {
+            "code": 25,
+            "description": "Lasersko beljenje zuba",
+            "price": 200
+          },
+          {
+            "code": 26,
+            "description": "Kucno beljenje zuba",
+            "price": 200
+          },
+          {
+            "code": 27,
+            "description": "Kompozitna faseta",
+            "price": 50
+          },
+          {
+            "code": 28,
+            "description": "Uklanjanje mekih naslaga",
+            "price": 10
+          },
+          {
+            "code": 29,
+            "description": "Vadjenje mlecnog zuba",
+            "price": 10
+          },
+          {
+            "code": 30,
+            "description": "Fiksa proteza metalna",
+            "price": 600
+          },
+              {
+            "code": 31,
+            "description": "Fiksna proteza estetska",
+            "price": 800
+          },
+          {
+            "code": 32,
+            "description": "Mobilna decija proteza",
+            "price": 600
+          },
+          {
+            "code": 33,
+            "description": "Tvins blok decija proteza",
+            "price": 600
+          },
+          {
+            "code": 34,
+            "description": "Zalivanje fisura",
+            "price": 15
+          },
+          {
+            "code": 35,
+            "description": "Lokalna aplikacija leka",
+            "price": 20
+          },
+          {
+            "code": 36,
+            "description": "Kompozitni ispun ml.zuba",
+            "price": 15
+          },
+          {
+            "code": 37,
+            "description": "Zubni nakit",
+            "price": 40
+          },
+          {
+            "code": 38,
+            "description": "Strauman implant",
+            "price": 700
+          },
+          {
+            "code": 39,
+            "description": "Bredent implant",
+            "price": 600
+          },
+          {
+            "code": 40,
+            "description": "Mis implant",
+            "price": 600
+          },
+          {
+            "code": 41,
+            "description": "Metalokeramicka kruna implant",
+            "price": 250
+          },
+          {
+            "code": 42,
+            "description": "Bezmetalna kruna implant",
+            "price": 350
+          },
+          {
+            "code": 43,
+            "description": "Keramicki viniri",
+            "price": 350
+          },
+          {
+            "code": 44,
+            "description": "Skeletirana proteza na precki",
+            "price": 2400
+          },
+          {
+            "code": 45,
+            "description": "Skeletirana proteza bio hpp 4imp",
+            "price": 3000
+          },
+          {
+            "code": 46,
+            "description": "Fiksni rad na sraf biohpp cirkon",
+            "price": 4000
+          },
+          {
+            "code": 47,
+            "description": "Fiksni rad na sraf cirkon biohpp cirkon",
+            "price": 3500
+          },
+          {
+            "code": 48,
+            "description": "Skeletirana proteza 2 lokatora",
+            "price": 1400
+          },
+          {
+            "code": 49,
+            "description": "Biohpp proteza 2 lokatora",
+            "price": 2000
+          },
+          {
+            "code": 50,
+            "description": "MWRO operacija po zubu",
+            "price": 50
+          },
+          {
+            "code": 51,
+            "description": "Kostani zamenik BIo-oss",
+            "price": 180
+          },
+          {
+            "code": 52,
+            "description": "Augmentaciona procedura",
+            "price": 100
+          },
+          {
+            "code": 53,
+            "description": "Kolagena membrana",
+            "price": 300
+          },
+          {
+            "code": 54,
+            "description": "Produbljivanje forniksa",
+            "price": 150
+          },
+          {
+            "code": 55,
+            "description": "Nivelacija grebena",
+            "price": 150
+          },
+          {
+            "code": 56,
+            "description": "Hirusko vadjenje zuba",
+            "price": 150
+          },
+          {
+            "code": 57,
+            "description": "Resekcija vrha korena",
+            "price": 150
+          },
+          {
+              "code": 58,
+              "description": "Sinus floor elevation + material",
+              "price": 800
+            },
+            {
+              "code": 59,
+              "description": "All on 4 implant system (metal ceramic crown)",
+              "price": 4500
+            },
+            {
+              "code": 60,
+              "description": "All on 6 implant system (metal ceramic crown)",
+              "price": 6500
+            },
+            {
+              "code": 61,
+              "description": "Cystetomy",
+              "price": 200
+            }
+    ]
+  }
+}

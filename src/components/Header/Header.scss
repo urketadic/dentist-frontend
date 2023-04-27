@@ -6,6 +6,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
 
   .logo {
     width: 12em;
@@ -55,11 +56,39 @@
     }
 }
 
-}
-
 
 header {
   border: 1px solid $border-color;
   padding: 0 1.2em;
 }
 
+.language-switcher {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .language-switcher button {
+    background-color: #eee;
+    border: 1px solid #bbb;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
+  }
+  
+  .language-switcher button:hover {
+    background-color: #ddd;
+  }
+  
+  .language-switcher button.selected {
+    // background-color: #bbb;
+    background-color: #f16093;
+    color: white;
+  }
+  
+  .language-switcher img {
+    width: 35px;
+    height: auto;
+  }
