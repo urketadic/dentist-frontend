@@ -66,11 +66,11 @@ src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d845.5863983264421!2d19
                     <BeforeAfter />
                     <p style={theme === "dark" ? darkTheme.text : {}}>{t("formore")}<a href='https://www.instagram.com/dr.vanja.ljubinkovic'>Instagram</a> {t("or")} <a href='https://www.facebook.com/dr.vanja.stepanovic'>Facebook</a> </p>
 
-                    <div className="separator" style={theme === "dark" ? darkTheme.text : {}}></div>
+                    <div className="separator"></div>
                     <div className="tratamientos">
 
                         <h2 style={{textAlign: 'center'}}>{t("services")}</h2>
-                        <p className="emphasys" style={theme === "dark" ? darkTheme.text : {}}>{t("consultation")}.</p>
+                        <p className="emphasys" >{t("consultation")}.</p>
                         <br></br>
                         <div className="coleccionespecialidades">
                             <div className='vistaDivEspecialidades'>

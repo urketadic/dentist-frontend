@@ -88,7 +88,7 @@ const Prices =({ theme } )=>{
                             return(
                                 <tr key={value.code}>
                                     <td>{value.description}</td>
-                                    <td>{value.price} {t("valuta")}</td>
+                                    <td className='pricerow'>{value.price} {t("valuta")}</td>
                                 </tr>
                             )
                             })}
