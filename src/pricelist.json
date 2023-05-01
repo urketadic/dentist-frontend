@@ -313,308 +313,308 @@
     "prices": [
         {
             "code": 1,
-            "description": "Vadjenje zuba",
-            "price": 20
+            "description": "Vađenje zuba",
+            "price": 2400
           },
           {
             "code": 2,
-            "description": "Komplikovano vadjenje zuba",
-            "price": 40
+            "description": "Komplikovano vađenje zuba",
+            "price": 4800
           },
           {
             "code": 3,
-            "description": "Ukl.kamenca ultr.",
-            "price": 30
+            "description": "Uklanjanje kamenca",
+            "price": 3600
           },
           {
             "code": 4,
-            "description": "Polir.peskarenje",
-            "price": 20
+            "description": "Poliranje i peskiranje",
+            "price": 2400
           },
           {
             "code": 5,
-            "description": "Obr.parad.dzepa",
-            "price": 20
+            "description": "Obrada parodontalnog dzepa",
+            "price": 2400
           },
           {
             "code": 6,
             "description": "Helbo laser",
-            "price": 210
+            "price": 25200
           },
           {
             "code": 7,
-            "description": "Frenulum",
-            "price": 100
+            "description": "Frenektomija",
+            "price": 1200
           },
           {
             "code": 8,
-            "description": "Kompozirtni ispun",
-            "price": 25
+            "description": "Kompozitni ispun",
+            "price": 3000
           },
           {
             "code": 9,
-            "description": "Kompozirtni ispun m.o.d",
-            "price": 30
+            "description": "Kompozitni ispun MOD",
+            "price": 3600
           },
           {
             "code": 10,
-            "description": "Kompozitna rekonstrukcija",
-            "price": 40
+            "description": "Kompozitna nadogradnja",
+            "price": 4800
           },
           {
             "code": 11,
             "description": "Vitalna ili mortalna ekstirpacija",
-            "price": 20
+            "price": 2400
           },
           {
             "code": 12,
             "description": "Lokalna aplikacija leka",
-            "price": 10
+            "price": 1200
           },
           {
             "code": 13,
-            "description": "Okluzalni splint",
-            "price": 70
+            "description": "Retentcioni splint",
+            "price": 8400
           },
           {
             "code": 14,
-            "description": "Metalo-keramicka kruna",
-            "price": 110
+            "description": "Metalo-keramička kruna",
+            "price": 13200
           },
           {
             "code": 15,
-            "description": "Bezmetalna keramicka kruna I",
-            "price": 300
+            "description": "Bezmetalna keramička kruna I",
+            "price": 36000
           },
           {
             "code": 16,
-            "description": "Bezmetalna keramicka kruna II",
-            "price": 250
+            "description": "Bezmetalna keramička kruna II",
+            "price": 30000
           },
           {
             "code": 17,
-            "description": "Fiber kocic sa nadogradnjom",
-            "price": 70
+            "description": "Fiber kočić sa nadogradnjom",
+            "price": 8400
           },
           {
             "code": 18,
-            "description": "parcijalna plocasta proteza",
-            "price": 200
+            "description": "Parcijalna pločasta proteza",
+            "price": 24000
           },
           {
             "code": 19,
-            "description": "Totalna plocasta proteza",
-            "price": 200
+            "description": "Totalna pločasta proteza",
+            "price": 24000
           },
           {
             "code": 20,
             "description": "Skeletirana proteza",
-            "price": 350
+            "price": 42000
           },
           {
             "code": 21,
-            "description": "Atecmeni",
-            "price": 30
+            "description": "Atečmeni",
+            "price": 3600
           },
           {
             "code": 22,
             "description": "Defleks proteza",
-            "price": 350
+            "price": 42000
           },
           {
             "code": 23,
-            "description": "Repatura polomljene proteze",
-            "price": 30
+            "description": "Reparatura polomljene proteze",
+            "price": 3600
           },
           {
             "code": 24,
             "description": "Podlaganje proteze",
-            "price": 60
+            "price": 7200
           },
           {
             "code": 25,
             "description": "Lasersko beljenje zuba",
-            "price": 200
+            "price": 24000
           },
           {
             "code": 26,
-            "description": "Kucno beljenje zuba",
-            "price": 200
+            "description": "Kućno beljenje zuba",
+            "price": 24000
           },
           {
             "code": 27,
             "description": "Kompozitna faseta",
-            "price": 50
+            "price": 6000
           },
           {
             "code": 28,
             "description": "Uklanjanje mekih naslaga",
-            "price": 10
+            "price": 1200
           },
           {
             "code": 29,
-            "description": "Vadjenje mlecnog zuba",
-            "price": 10
+            "description": "Vađenje mlečnog zuba",
+            "price": 1200
           },
           {
             "code": 30,
-            "description": "Fiksa proteza metalna",
-            "price": 600
+            "description": "Fiksna proteza metalna",
+            "price": 72000
           },
               {
             "code": 31,
             "description": "Fiksna proteza estetska",
-            "price": 800
+            "price": 96000
           },
           {
             "code": 32,
-            "description": "Mobilna decija proteza",
-            "price": 600
+            "description": "Mobilna dečija proteza",
+            "price": 72000
           },
           {
             "code": 33,
-            "description": "Tvins blok decija proteza",
-            "price": 600
+            "description": "Twin blok dečija proteza",
+            "price": 72000
           },
           {
             "code": 34,
             "description": "Zalivanje fisura",
-            "price": 15
+            "price": 1800
           },
           {
             "code": 35,
             "description": "Lokalna aplikacija leka",
-            "price": 20
+            "price": 2400
           },
           {
             "code": 36,
-            "description": "Kompozitni ispun ml.zuba",
-            "price": 15
+            "description": "Kompozitni ispun na mlečnom zubu",
+            "price": 1800
           },
           {
             "code": 37,
             "description": "Zubni nakit",
-            "price": 40
+            "price": 4800
           },
           {
             "code": 38,
-            "description": "Strauman implant",
-            "price": 700
+            "description": "Straumann implant",
+            "price": 84000
           },
           {
             "code": 39,
             "description": "Bredent implant",
-            "price": 600
+            "price": 72000
           },
           {
             "code": 40,
             "description": "Mis implant",
-            "price": 600
+            "price": 72000
           },
           {
             "code": 41,
-            "description": "Metalokeramicka kruna implant",
-            "price": 250
-          },
-          {
-            "code": 42,
-            "description": "Bezmetalna kruna implant",
-            "price": 350
-          },
-          {
-            "code": 43,
-            "description": "Keramicki viniri",
-            "price": 350
-          },
-          {
-            "code": 44,
-            "description": "Skeletirana proteza na precki",
-            "price": 2400
-          },
-          {
-            "code": 45,
-            "description": "Skeletirana proteza bio hpp 4imp",
+            "description": "Metalo-keramička kruna na implantu",
             "price": 3000
           },
           {
+            "code": 42,
+            "description": "Keramička kruna na implantu",
+            "price": 42000
+          },
+          {
+            "code": 43,
+            "description": "Keramički viniri",
+            "price": 42000
+          },
+          {
+            "code": 44,
+            "description": "Skeletirana proteza na prečki",
+            "price": 288000
+          },
+          {
+            "code": 45,
+            "description": "Skeletirana proteza BioHPP 4 implanta",
+            "price": 360000
+          },
+          {
             "code": 46,
-            "description": "Fiksni rad na sraf biohpp cirkon",
-            "price": 4000
+            "description": "Fiksni rad na šraf-BioHPP-cirkon",
+            "price": 480000
           },
           {
             "code": 47,
-            "description": "Fiksni rad na sraf cirkon biohpp cirkon",
-            "price": 3500
+            "description": "Fiksni rad na šraf cirkon-BioHPP-cirkon",
+            "price": 420000
           },
           {
             "code": 48,
-            "description": "Skeletirana proteza 2 lokatora",
-            "price": 1400
+            "description": "Skeletirana proteza na 2 lokatora",
+            "price": 168000
           },
           {
             "code": 49,
-            "description": "Biohpp proteza 2 lokatora",
-            "price": 2000
+            "description": "BioHPP proteza na 2 lokatora",
+            "price": 240000
           },
           {
             "code": 50,
             "description": "MWRO operacija po zubu",
-            "price": 50
+            "price": 6000
           },
           {
             "code": 51,
-            "description": "Kostani zamenik BIo-oss",
-            "price": 180
+            "description": "Koštani zamenik Bio-Oss",
+            "price": 21600
           },
           {
             "code": 52,
             "description": "Augmentaciona procedura",
-            "price": 100
+            "price": 12000
           },
           {
             "code": 53,
             "description": "Kolagena membrana",
-            "price": 300
+            "price": 36000
           },
           {
             "code": 54,
             "description": "Produbljivanje forniksa",
-            "price": 150
+            "price": 18000
           },
           {
             "code": 55,
             "description": "Nivelacija grebena",
-            "price": 150
+            "price": 18000
           },
           {
             "code": 56,
-            "description": "Hirusko vadjenje zuba",
-            "price": 150
+            "description": "Vađenje impaktiranog umnjaka",
+            "price": 18000
           },
           {
             "code": 57,
             "description": "Resekcija vrha korena",
-            "price": 150
+            "price": 18000
           },
           {
               "code": 58,
-              "description": "Sinus floor elevation + material",
-              "price": 800
+              "description": "Sinus lift",
+              "price": 96000
             },
             {
               "code": 59,
-              "description": "All on 4 implant system (metal ceramic crown)",
-              "price": 4500
+              "description": "All on 4 implant sistem",
+              "price": 540000
             },
             {
               "code": 60,
-              "description": "All on 6 implant system (metal ceramic crown)",
-              "price": 6500
+              "description": "All on 6 implant sistem (metalo-keramička kruna)",
+              "price": 780000
             },
             {
               "code": 61,
-              "description": "Cystetomy",
-              "price": 200
+              "description": "Uklanjanje ciste (hirurški)",
+              "price": 24000
             }
     ]
   }

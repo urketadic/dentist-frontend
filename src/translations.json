@@ -41,7 +41,8 @@
       "pretraga": "pretraga",
       "nepostoji": "Ne postoji takav artikal. Posaljite nam poruku ako imate posebnih zahteva.",
       "price": "Cena",
-      "procedura": "Procedura"
+      "procedura": "Procedura",
+      "valuta": "RSD"
     },
     "en": {
       "question":"Need a dentist?",
@@ -85,6 +86,7 @@
       "pretraga": "search",
       "nepostoji": "No procedure found. Send us a message if you have any special requests.",
       "price": "Price",
-      "procedura": "Procedure"
+      "procedura": "Procedure",
+      "valuta": "€"
     }
   }

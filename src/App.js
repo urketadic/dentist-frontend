@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {BrowserRouter, Switch ,Route} from 'react-router-dom';
 import './App.scss';
 import Login from './containers/Login/Login';
@@ -13,25 +13,44 @@ import Prices from './components/Prices/Prices';
 
 
 function App() {
+
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+    
+    const toggleTheme = () => {
+        setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    };
+
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
+      }, [theme]);
+    
+
   return (
 
     <div className="App">
         
-
         <BrowserRouter>
             
             <Switch>
 
             
-            <Route path='/' exact component={Home}/>
-            <Route path='/login' exact component ={Login}/>
-            <Route path='/register' exact component ={Register}/>
-            <Route path='/profile' exact component ={Profile}/>
-            <Route path='/profile/my-appointments' exact component={Appointments}/>
-            <Route path='/profile/new-appointment' exact component={NewAppointment}/>
-            <Route path='/admin' exact component ={Admin}/>
-            <Route path='/admin/all-appointments' exact component ={AllAppointments}/>
-            <Route path='/cenovnik' exact component={Prices} />
+                <Route
+                    path="/"
+                    exact
+                    render={(props) => <Home {...props} theme={theme} toggleTheme={toggleTheme} />}
+              />
+                <Route path='/login' exact component ={Login}/>
+                <Route path='/register' exact component ={Register}/>
+                <Route path='/profile' exact component ={Profile}/>
+                <Route path='/profile/my-appointments' exact component={Appointments}/>
+                <Route path='/profile/new-appointment' exact component={NewAppointment}/>
+                <Route path='/admin' exact component ={Admin}/>
+                <Route path='/admin/all-appointments' exact component ={AllAppointments}/>
+                <Route
+                    path="/cenovnik"
+                    exact
+                    render={(props) => <Prices {...props} theme={theme} />}
+                />
             
             
             </Switch>

@@ -12,17 +12,35 @@ import cirugia from '../../img/cirugia.png';
 import BeforeAfter from '../../components/BeforeAfter/BeforeAfter';
 import { useTranslation } from "react-i18next";
 
-const Home =()=>{
+const Home =({ theme, toggleTheme })=>{
 
     const { t, i18n } = useTranslation();
+
+    const darkTheme = {
+        topsection: {
+          backgroundColor: "#212121",
+          color: 'white'
+        },
+        bottomsection: {
+          backgroundColor: "#212121",
+          color: 'white'
+        },
+        googlemaps: {
+            filter: 'grayscale(75%)',
+            border: 0
+        },
+        text: {
+            color: 'white'
+        }
+      };
 
     return(
         <div className='vistaHome'>
             
             <Header home="true"></Header>
                 
-            <main className='vistaMain'>
-                <div className="sloganContainer">
+            <main className='vistaMain' style={theme === "dark" ? darkTheme.bottomsection : {}}>
+                <div className="sloganContainer" style={theme === "dark" ? darkTheme.topsection : {}} >
                     <div className="slogan">
                         <div className="sloganText">
                             <h2>{t("question")}<br/>
@@ -38,21 +56,21 @@ const Home =()=>{
                         </div>
                     </div>
                 </div>
-                <iframe className="gMap" style={{border:0}}
+                <iframe  className="gMap" style={theme === "dark" ? darkTheme.googlemaps : {border: 0}}
 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d845.5863983264421!2d19.22241007222942!3d44.53149053876247!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x445d03510ef75485!2sZubar%20Loznica%20-%20Stomatolo%C5%A1ka%20Ordinacija%20Dr%20Vanja!5e0!3m2!1sen!2sde!4v1674406315220!5m2!1sen!2sde"></iframe>
 
              
                 <div className="descripcion">
                 <h2>{t("bna")}</h2>
-                    <p className="emphasys">{t("bnatext")}.</p>
+                    <p className="emphasys" style={theme === "dark" ? darkTheme.text : {}}>{t("bnatext")}.</p>
                     <BeforeAfter />
-                    <p>{t("formore")}<a href='https://www.instagram.com/dr.vanja.ljubinkovic'>Instagram</a> {t("or")} <a href='https://www.facebook.com/dr.vanja.stepanovic'>Facebook</a> </p>
+                    <p style={theme === "dark" ? darkTheme.text : {}}>{t("formore")}<a href='https://www.instagram.com/dr.vanja.ljubinkovic'>Instagram</a> {t("or")} <a href='https://www.facebook.com/dr.vanja.stepanovic'>Facebook</a> </p>
 
-                    <div className="separator"></div>
+                    <div className="separator" style={theme === "dark" ? darkTheme.text : {}}></div>
                     <div className="tratamientos">
 
                         <h2 style={{textAlign: 'center'}}>{t("services")}</h2>
-                        <p className="emphasys">{t("consultation")}.</p>
+                        <p className="emphasys" style={theme === "dark" ? darkTheme.text : {}}>{t("consultation")}.</p>
                         <br></br>
                         <div className="coleccionespecialidades">
                             <div className='vistaDivEspecialidades'>

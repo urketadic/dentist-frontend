@@ -3,12 +3,44 @@ import Header from '../../components/Header/Header';
 import './Prices.scss'
 import { useTranslation } from "react-i18next";
 
-const Prices =()=>{
+const Prices =({ theme } )=>{
 
     const { t, i18n } = useTranslation();
 
     const [allData,setAllData] = useState([]);
     const [filteredData,setFilteredData] = useState(allData);
+    const [sortOrder, setSortOrder] = useState('asc');
+    const [sortKey, setSortKey] = useState('price');
+
+    const normalizeString = (str) => {
+        const map = {
+          'ć': 'c',
+          'č': 'c',
+          'đ': 'd',
+          'š': 's',
+          'ž': 'z',
+        };
+
+        return str
+        .toLowerCase()
+        .replace(/[ćčđšž]/g, (match) => map[match] || match);
+    };
+
+    const sortData = (key) => {
+        const order = sortKey === key && sortOrder === 'asc' ? 'desc' : 'asc';
+        setSortOrder(order);
+        setSortKey(key);
+      
+        const sortedData = [...filteredData].sort((a, b) => {
+          if (order === 'asc') {
+            return a[key] - b[key];
+          } else {
+            return b[key] - a[key];
+          }
+        });
+      
+        setFilteredData(sortedData);
+      };
 
     useEffect(() => {
         const initialPrices = t("pricelist:prices", { returnObjects: true });
@@ -17,10 +49,10 @@ const Prices =()=>{
         }, [t, i18n.language]);
 
     const handleSearch = (event) => {
-        let value = event.target.value.toLowerCase();
+        let value = normalizeString(event.target.value);
         let result = [];
         result = allData.filter((data) => {
-          return data.description.toLowerCase().search(value) !== -1;
+          return normalizeString(data.description).search(value) !== -1;
         });
       
         if (filteredData.length === 0) {
@@ -42,7 +74,10 @@ const Prices =()=>{
                     <thead>
                         <tr>
                         <th> {t("procedura")} </th>
-                        <th> {t("price")} </th>
+                        <th onClick={() => sortData('price')}>
+                            {t("price")}
+                            {sortKey === 'price' && (sortOrder === 'asc' ? ' ▲' : ' ▼')}
+                        </th>
                         </tr>
                     </thead>
 
@@ -53,7 +88,7 @@ const Prices =()=>{
                             return(
                                 <tr key={value.code}>
                                     <td>{value.description}</td>
-                                    <td>{value.price} €</td>
+                                    <td>{value.price} {t("valuta")}</td>
                                 </tr>
                             )
                             })}
