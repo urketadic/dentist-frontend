@@ -47,9 +47,8 @@ const Home =({ theme, toggleTheme })=>{
                             <span className="reacciona">{t("perfection")}</span>  {t("standard")} </h2>
                             {t("callus")}
                             <div className="buttonContainer">
-                                <CTAButton text="065 687 0334" phone={true} goto={false} style={{marginRight: '0.5em'}}></CTAButton>
+                                <CTAButton text="065 636 0334" phone={true} goto={false} style={{marginRight: '0.5em'}}></CTAButton>
                                 <CTAButton text= {t("onlinechat")} chat={true} goto={false} style={{marginRight: '0.5em'}}></CTAButton>
-                                <CTAButton text={t("profile")} disabled={true} goto={false}></CTAButton>
                             </div>
                         </div>
                         <div className="dentist">

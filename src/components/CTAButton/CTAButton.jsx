@@ -23,7 +23,7 @@ const CTAButton = (props) => {
 
     let returned = () => {
         if (props.phone) {
-            return <a href="tel:+381656360334"> 
+            return <a href="tel:+381656360334">
             <button onClick={onClick} className={styling} style={props.style}>
                 {props.text}
             </button>
